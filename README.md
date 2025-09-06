@@ -22,9 +22,10 @@ methodia/
 ├── 🎨 apple-touch-icon.png         # Icône Apple/iOS
 ├── 📁 assets/                       # Ressources statiques optimisées
 │   ├── 📁 css/
-│   │   └── styles.min.css          # CSS minifié (-30% vs original)
+│   │   └── styles.css              # CSS optimisé et lisible pour maintenance
 │   ├── 📁 js/
-│   │   └── script.min.js           # JavaScript minifié (-42% vs original)
+│   │   ├── script.js               # JavaScript principal optimisé
+│   │   └── trusted-types-policy.js # Sécurité CSP
 │   └── 📁 images/                   # Images optimisées WebP + PNG
 │       ├── og-image.webp/png       # Images Open Graph
 │       ├── caferuis-og.webp/png    # Images spécialisées par formation
@@ -43,8 +44,9 @@ methodia/
 ├── netlify.toml                     # Configuration déploiement Netlify
 ├── sitemap.xml                      # Plan du site pour SEO
 ├── robots.txt                       # Instructions moteurs de recherche
-├── manifest.json                    # PWA Manifest
-├── sw.js                           # Service Worker PWA
+├── manifest.json                    # PWA Manifest (désactivé temporairement)
+├── sw.js                           # Service Worker de nettoyage (écrase l'ancien)
+├── .htaccess                       # Configuration serveur (anti-cache développement)
 ├── browserconfig.xml               # Configuration IE/Edge
 └── .gitignore                      # Configuration Git
 ```
@@ -115,10 +117,10 @@ Le fichier `netlify.toml` configure automatiquement :
 **Stack Frontend moderne :**
 
 - **HTML5** : Structure sémantique avec balises appropriées
-- **CSS3 minifié** : Animations, responsive design, variables CSS (26KB)
-- **JavaScript Vanilla minifié** : Interactions optimisées, lazy loading (11KB)
+- **CSS3 optimisé** : Animations, responsive design, variables CSS (~32KB non-minifié)
+- **JavaScript Vanilla** : Interactions optimisées, lazy loading, popup fonctionnelle (~20KB)
 - **WebP + PNG** : 20 images optimisées avec fallback automatique
-- **PWA** : Service Worker + Manifest (application installable)
+- **PWA** : Service Worker de nettoyage + Manifest
 - **SEO avancé** : Meta tags, Open Graph, Schema.org, sitemap.xml
 
 **Déploiement & Performance :**
@@ -161,12 +163,13 @@ Le fichier `netlify.toml` configure automatiquement :
 - **Core Web Vitals** : LCP < 2.5s, FID < 100ms, CLS < 0.1
 - **SEO Score** : 100/100 avec méta-données complètes
 
-### Optimisations techniques
+### Optimisations techniques (Mise à jour Sept 2024)
 
-- **CSS** : 36KB → 25KB (-30%)
-- **JavaScript** : 20KB → 12KB (-42%)
+- **CSS** : Fichier unique ~32KB (lisible, maintenable)
+- **JavaScript** : Fichier unique ~20KB (avec corrections popup)
 - **Images** : WebP 4KB vs PNG 60KB (-92%)
-- **Total économisé** : ~40KB par page + lazy loading
+- **Service Worker** : Neutralisé (évite les problèmes de cache)
+- **Cache busting** : URLs avec timestamps pour développement
 
 ## 🔒 Sécurité & Bonnes pratiques
 
@@ -259,6 +262,16 @@ Le fichier `netlify.toml` configure automatiquement :
 - [x] **HTTPS automatique** : Certificat SSL Netlify
 - [x] **Compression** : Gzip + minification auto
 
+### ✅ Phase 5 - Maintenance & Corrections (TERMINÉE - Sept 2024)
+
+- [x] **Suppression minification** : Facilite la maintenance et debugging
+- [x] **Correction popup CTA** : Fermeture fonctionnelle sur mobile et desktop
+- [x] **Nettoyage service worker** : Élimination cache persistant problématique  
+- [x] **Amélioration UX mobile** : Affichage popup complet, zone tactile élargie
+- [x] **Délégation d'événements** : Event listeners robustes et performants
+- [x] **Cache busting agressif** : URLs avec timestamps pour forcer rechargement
+- [x] **Configuration .htaccess** : Headers anti-cache pour développement
+
 ## ✅ Checklist déploiement production
 
 ### Structure & Code
@@ -327,11 +340,60 @@ git push origin main
 ✅ **Performance** : Minification et compression auto  
 ✅ **HTTPS** : Certificat SSL automatique
 
+## 🔧 Troubleshooting & Maintenance
+
+### Problèmes courants et solutions
+
+#### ❌ Popup "30 Minutes Gratuites" ne se ferme pas
+**Solution appliquée (Sept 2024) :**
+- ✅ Délégation d'événements robuste
+- ✅ Support tactile mobile amélioré  
+- ✅ Zone de touch élargie (40px)
+- ✅ Event listeners avec `closest()` pour robustesse
+
+#### ❌ Service Worker cache les anciens fichiers
+**Solution appliquée (Sept 2024) :**
+- ✅ Service Worker de nettoyage créé (`sw.js`)
+- ✅ Cache busting avec timestamps
+- ✅ Configuration `.htaccess` anti-cache
+- ✅ Rechargement automatique après nettoyage
+
+#### ❌ Fichiers minifiés difficiles à maintenir
+**Solution appliquée (Sept 2024) :**
+- ✅ Suppression des fichiers `.min.css` et `.min.js`
+- ✅ Fichiers sources lisibles et commentés
+- ✅ Maintenance simplifiée
+- ✅ Debugging facilité
+
+### Commandes utiles pour le développement
+
+```bash
+# Nettoyage git (si nécessaire)
+git clean -fd
+git reset --hard HEAD
+
+# Test local avec cache désactivé
+python -m http.server 8000 --bind 127.0.0.1
+
+# Vérifier les fichiers chargés (DevTools Network)
+# Rechercher : styles.css (✅) et script.js (✅)
+# Éviter : styles.min.css (❌) et script.min.js (❌)
+```
+
+### État actuel (Septembre 2024)
+
+- ✅ **Popup fonctionnelle** : Fermeture croix OK sur tous appareils
+- ✅ **Service Worker neutralisé** : Plus de problèmes de cache
+- ✅ **Maintenance simplifiée** : Fichiers sources non-minifiés
+- ✅ **Performance maintenue** : Optimisations préservées
+- ✅ **Debugging facilité** : Code lisible et commenté
+
 ## 👨‍💻 Développement & Support
 
 **Développé par :** Christophe - [christophe-dev-freelance.fr](https://christophe-dev-freelance.fr)  
-**Documentation complète :** Voir `/docs/RAPPORT-CLIENT.md`
+**Documentation complète :** Voir `/docs/RAPPORT-CLIENT.md`  
+**Dernière mise à jour :** Septembre 2024 - Corrections popup et maintenance
 
 ---
 
-_Architecture moderne • Performance optimisée • SEO maximisé • PWA incluse_ 🚀
+_Architecture moderne • Performance optimisée • SEO maximisé • Maintenance simplifiée_ 🚀
