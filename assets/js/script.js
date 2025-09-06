@@ -578,6 +578,23 @@ document.addEventListener('DOMContentLoaded', function() {
         startQuiz();
     }
 
+    // Initialiser le menu mobile
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleMobileMenu();
+        });
+    }
+
+    // Fermer le menu mobile quand on clique sur un lien
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMobileMenu();
+        });
+    });
+
     // Initialiser le bouton WhatsApp
     const whatsappButton = document.querySelector('.whatsapp-fab');
     if (whatsappButton) {
