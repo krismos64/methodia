@@ -1,0 +1,51 @@
+# Robots.txt pour METHODEA - Formation à la Recherche Scientifique
+# https://methodea.fr
+
+# Autoriser tous les robots à crawler le site
+User-agent: *
+Allow: /
+
+# Pages importantes à indexer en priorité
+Allow: /index.html
+Allow: /pages/
+
+# Ressources statiques accessibles
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+
+# Empêcher l'indexation des fichiers techniques/privés
+Disallow: /docs/CLAUDE.md
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: *.log
+Disallow: /.env*
+
+# Fichiers temporaires et de développement
+Disallow: /*_old.*
+Disallow: /*tmp*
+Disallow: /*test*
+
+# Localisation du sitemap XML
+Sitemap: https://methodea.fr/sitemap.xml
+
+# Directives spécifiques pour les moteurs de recherche principaux
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquer les bots malveillants
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
