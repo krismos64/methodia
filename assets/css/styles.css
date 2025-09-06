@@ -459,7 +459,7 @@ nav.scrolled {
 
 /* Section Expertise */
 .expertise {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     background: white;
     position: relative;
 }
@@ -539,7 +539,7 @@ nav.scrolled {
 
 /* Section Roadmap */
 .roadmap {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     background: linear-gradient(180deg, var(--light) 0%, white 100%);
 }
 
@@ -629,7 +629,7 @@ nav.scrolled {
 
 /* Section Quiz */
 .quiz-section {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     background: white;
 }
 
@@ -750,7 +750,7 @@ nav.scrolled {
 
 /* Section Formules */
 .formulas {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     background: linear-gradient(180deg, var(--light) 0%, white 100%);
 }
 
@@ -908,7 +908,7 @@ nav.scrolled {
 
 /* Section Consultation CTA */
 .consultation-cta {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     background: var(--gradient);
     text-align: center;
     color: white;
@@ -977,7 +977,7 @@ nav.scrolled {
 
 /* Section Témoignages */
 .testimonials {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     background: white;
 }
 
