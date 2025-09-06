@@ -1,0 +1,33 @@
+# Documentation privée
+CLAUDE.md
+
+# Système
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dépendances (si ajoutées plus tard)
+node_modules/
+
+# Build
+dist/
+build/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Temporaires
+*.tmp
+*.temp
+.cache/
