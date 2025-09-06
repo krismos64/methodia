@@ -1,0 +1,37 @@
+# Désactivation complète du cache pour le développement
+# Force le rechargement des fichiers CSS et JS
+
+<IfModule mod_headers.c>
+    # Désactiver le cache pour les fichiers CSS et JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+    
+    # Désactiver le cache pour les fichiers HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# Alternative si mod_headers n'est pas disponible
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 0 seconds"
+    ExpiresByType application/javascript "access plus 0 seconds"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Empêcher la mise en cache des service workers
+<Files "sw.js">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</Files>
+
+# Forcer le rechargement pour Live Server
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY

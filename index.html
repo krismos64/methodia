@@ -28,11 +28,11 @@
     <link rel="canonical" href="https://methodea.fr/">
     
     <!-- Trusted Types Policy - PRIORITÉ SÉCURITÉ -->
-    <script src="assets/js/trusted-types-policy.js"></script>
+    <script src="/assets/js/trusted-types-policy.js"></script>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="assets/css/styles.min.css" as="style">
-    <link rel="preload" href="assets/js/script.min.js" as="script">
+    <link rel="preload" href="/assets/css/styles.css?bust=1725635400000&nocache=true" as="style">
+    <link rel="preload" href="/assets/js/script.js?bust=1725635400000&nocache=true" as="script">
     <link rel="preload" href="/assets/images/og-image.webp" as="image" type="image/webp">
     
     <!-- Critical CSS inline pour above-the-fold -->
@@ -40,9 +40,8 @@
     :root{--primary:#6366f1;--primary-dark:#4f46e5;--secondary:#14b8a6;--accent:#f97316;--success:#10b981;--dark:#0f172a;--light:#f8fafc;--white:#ffffff;--gradient:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#ec4899 100%);--gradient-alt:linear-gradient(135deg,#06b6d4 0%,#3b82f6 100%);--gradient-success:linear-gradient(135deg,#10b981 0%,#059669 100%)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:var(--dark);overflow-x:hidden;background:var(--white)}nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}nav.scrolled{box-shadow:0 10px 30px rgba(0,0,0,0.1)}.nav-container{max-width:1280px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.75rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glow 3s ease-in-out infinite}@keyframes glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.2)}}.hero{margin-top:80px;min-height:calc(100vh - 80px);background:linear-gradient(180deg,var(--light) 0%,rgba(99,102,241,0.05) 100%);position:relative;display:flex;align-items:center;overflow:hidden}.hero-content{max-width:1280px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}.hero-text h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1)}@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.hero-text p{font-size:1.25rem;color:#64748b;margin-bottom:2.5rem;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s both}.hero-buttons{display:flex;gap:1.5rem;flex-wrap:wrap;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.4s both}.btn-primary{background:var(--gradient);color:white;padding:1rem 2.5rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;box-shadow:0 10px 40px rgba(99,102,241,0.3);position:relative;overflow:hidden}.btn-secondary{background:transparent;color:var(--primary);padding:1rem 2.5rem;border:2px solid var(--primary);border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;position:relative;overflow:hidden}.stats-container{background:white;border-radius:30px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.1);position:relative;overflow:hidden}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.stat-number{font-size:2.5rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}.human-certificate{background:var(--gradient-success);color:white;padding:1rem 2rem;text-align:center;font-weight:600;font-size:1.1rem}@media (max-width:768px){.hero-content{grid-template-columns:1fr;gap:3rem}.hero-text h1{font-size:2.5rem}.hero-buttons{flex-direction:column;width:100%}.btn-primary,.btn-secondary{width:100%;text-align:center}.stats-grid{grid-template-columns:1fr}}
     </style>
     
-    <!-- CSS complet chargé de manière asynchrone -->
-    <link rel="preload" href="assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/styles.min.css"></noscript>
+    <!-- CSS principal - Force rechargement sans cache -->
+    <link rel="stylesheet" href="/assets/css/styles.css?bust=1725635400000&nocache=true">
     
     <!-- Fonts optimisés avec preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -60,8 +59,8 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- PWA Manifest désactivé temporairement -->
+    <!-- <link rel="manifest" href="/manifest.json"> -->
     
     <!-- Resource hints avancés pour performances -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -96,7 +95,7 @@
                 <a href="#roadmap">Programme</a>
                 <a href="#quiz">Quiz</a>
                 <a href="#formules">Tarifs</a>
-                <a href="#" class="cta-nav">Entretien Gratuit</a>
+                <a href="#consultation" class="cta-nav">Entretien Gratuit</a>
             </div>
             <div class="mobile-menu-toggle">
                 <span></span>
@@ -113,7 +112,7 @@
         <a href="#roadmap">Programme</a>
         <a href="#quiz">Quiz</a>
         <a href="#formules">Tarifs</a>
-        <a href="#">Entretien Gratuit</a>
+        <a href="#consultation">Entretien Gratuit</a>
     </div>
 
     <!-- Hero Section -->
@@ -342,16 +341,16 @@
     </section>
 
     <!-- Consultation CTA -->
-    <section class="consultation-cta">
+    <section class="consultation-cta" id="consultation">
         <div class="consultation-content">
             <h2>Entretien Gratuit de 30 Minutes</h2>
             <p>Discutez avec un enseignant-chercheur expert de votre projet de recherche et découvrez comment METHODEA peut accélérer votre réussite. Sans engagement, 100% personnalisé.</p>
-            <a href="#" class="consultation-button">Réserver mon entretien gratuit</a>
+            <a href="#" class="consultation-button" onclick="openModal()">Réserver mon entretien gratuit</a>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="section-header">
             <h2 class="section-title">Ils Ont Transformé leur Approche</h2>
             <p class="section-subtitle">Plus de 2500 étudiants formés avec succès</p>
@@ -505,22 +504,22 @@
             <div class="footer-section">
                 <h4>Formation</h4>
                 <ul>
-                    <li><a href="#">Programme complet</a></li>
-                    <li><a href="#">Méthode pédagogique</a></li>
-                    <li><a href="#">Coaching personnalisé</a></li>
-                    <li><a href="#">Accompagnement à la finalisation</a></li>
-                    <li><a href="#">Entreprises & Universités</a></li>
+                    <li><a href="#roadmap">Programme complet</a></li>
+                    <li><a href="#expertise">Méthode pédagogique</a></li>
+                    <li><a href="#formules">Coaching personnalisé</a></li>
+                    <li><a href="#formules">Accompagnement à la finalisation</a></li>
+                    <li><a href="#consultation">Entreprises & Universités</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Ressources</h4>
                 <ul>
-                    <li><a href="#">Blog méthodologie</a></li>
-                    <li><a href="#">Guides gratuits</a></li>
-                    <li><a href="#">Webinaires mensuels</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Témoignages vidéo</a></li>
+                    <li><a href="#expertise">Blog méthodologie</a></li>
+                    <li><a href="#roadmap">Guides gratuits</a></li>
+                    <li><a href="#consultation">Webinaires mensuels</a></li>
+                    <li><a href="#quiz">FAQ</a></li>
+                    <li><a href="#testimonials">Témoignages vidéo</a></li>
                 </ul>
             </div>
             
@@ -539,9 +538,9 @@
         <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; max-width: 1280px; margin: 0 auto;">
             <p>&copy; 2024 METHODEA - Tous droits réservés | Formation à la recherche académique</p>
             <div style="display: flex; gap: 2rem;">
-                <a href="#" style="color: #94a3b8; text-decoration: none;">Mentions légales</a>
-                <a href="#" style="color: #94a3b8; text-decoration: none;">CGV</a>
-                <a href="#" style="color: #94a3b8; text-decoration: none;">Politique de confidentialité</a>
+                <a href="#consultation" style="color: #94a3b8; text-decoration: none;">Mentions légales</a>
+                <a href="#formules" style="color: #94a3b8; text-decoration: none;">CGV</a>
+                <a href="#consultation" style="color: #94a3b8; text-decoration: none;">Politique de confidentialité</a>
             </div>
         </div>
     </footer>
@@ -806,36 +805,66 @@
     }
     </script>
 
-    <!-- Service Worker Registration -->
+    <!-- Service Worker de remplacement - ÉCRASE l'ancien -->
     <script>
+    console.log('🔥 NETTOYAGE RADICAL du service worker...');
+    
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('SW enregistré avec succès:', registration.scope);
-            
-            // Vérifier les mises à jour
-            registration.addEventListener('updatefound', () => {
-              const newWorker = registration.installing;
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // Nouvelle version disponible
-                  if (confirm('Une nouvelle version est disponible. Voulez-vous l\'activer ?')) {
-                    newWorker.postMessage({ type: 'SKIP_WAITING' });
-                    window.location.reload();
-                  }
-                }
-              });
-            });
-          })
-          .catch(error => {
-            console.log('Échec enregistrement SW:', error);
-          });
+      // 1. Enregistrer le nouveau service worker vide qui va écraser l'ancien
+      navigator.serviceWorker.register('/sw.js', { 
+        scope: '/',
+        updateViaCache: 'none' // Force le rechargement du SW
+      }).then(async function(registration) {
+        console.log('🔄 Nouveau SW vide enregistré');
+        
+        // Forcer la mise à jour immédiate
+        await registration.update();
+        
+        // Envoyer message pour forcer l'activation
+        if (registration.waiting) {
+          registration.waiting.postMessage({command: 'SKIP_WAITING'});
+        }
+        
+        // 2. Supprimer TOUS les anciens service workers
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        console.log('🔍 SWs trouvés après nettoyage:', registrations.length);
+        
+        // 3. Purger TOUS les caches
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          console.log('🗑️ Caches à supprimer:', cacheNames);
+          
+          for(const cacheName of cacheNames) {
+            await caches.delete(cacheName);
+            console.log('✅ Cache supprimé:', cacheName);
+          }
+        }
+        
+        // 4. Rechargement forcé SANS cache avec timestamp
+        console.log('🔄 RECHARGEMENT FORCÉ - Nouveaux fichiers...');
+        
+        if (!sessionStorage.getItem('sw_cleaned')) {
+          sessionStorage.setItem('sw_cleaned', 'true');
+          
+          // Forcer le rechargement complet avec cache bust
+          const url = new URL(window.location);
+          url.searchParams.set('nocache', Date.now());
+          window.location.replace(url.toString());
+        }
+        
+      }).catch(error => {
+        console.error('❌ Erreur SW:', error);
+        
+        // En cas d'échec, rechargement de force brute
+        if (!sessionStorage.getItem('force_reload')) {
+          sessionStorage.setItem('force_reload', 'true');
+          window.location.reload(true);
+        }
       });
     }
     </script>
 
-    <!-- JavaScript -->
-    <script src="assets/js/script.min.js"></script>
+    <!-- JavaScript - Force rechargement sans cache -->
+    <script src="./assets/js/script.js?bust=1725635400000&nocache=true"></script>
 </body>
 </html>
