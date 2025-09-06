@@ -100,6 +100,9 @@
     </script>
 </head>
 <body>
+    <!-- Skip Link pour accessibilité -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -107,16 +110,31 @@
             <a href="../index.html" class="back-btn">← Retour au site principal</a>
         </div>
     </nav>
+    
+    <!-- Fil d'Ariane visuel -->
+    <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../index.html" title="Accueil METHODEA - Formation recherche scientifique">🏠 Accueil</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span>Formation DSCG Comptabilité</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Coaching Mémoire DSCG</h1>
                 <p>Formation spécialisée pour votre mémoire de DSCG en comptabilité. Accompagnement complet depuis la conception de votre fiche d'agrément jusqu'à la soutenance, avec une approche formation professionnalisante.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Consultation gratuite</a>
-                    <a href="#programme" class="btn-secondary">Découvrir la formation</a>
+                    <a href="#consultation" class="btn-primary" title="Réserver entretien gratuit DSCG comptabilité avec expert-comptable">Consultation gratuite</a>
+                    <a href="#programme" class="btn-secondary" title="Programme complet formation mémoire DSCG comptabilité">Découvrir la formation</a>
                 </div>
             </div>
             <div class="hero-visual">

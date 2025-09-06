@@ -37,23 +37,30 @@ methodia/
 │   ├── memoire-master.html         # Formation Master Marketing/RH
 │   └── tfe-infirmier.html          # Formation TFE Infirmier
 ├── 📁 docs/                         # Documentation technique
-│   ├── README.md                   # Ce fichier
 │   └── CLAUDE.md                   # Documentation développeur (privée)
+├── _redirects                       # Redirections Netlify (URLs propres)
+├── netlify.toml                     # Configuration déploiement Netlify
+├── sitemap.xml                      # Plan du site pour SEO
+├── robots.txt                       # Instructions moteurs de recherche
+├── manifest.json                    # PWA Manifest
+├── sw.js                           # Service Worker PWA
+├── browserconfig.xml               # Configuration IE/Edge
 └── .gitignore                      # Configuration Git
 ```
 
-## 🚀 Installation et utilisation
+## 🚀 Installation et déploiement
 
 ### Prérequis
 
-- Serveur web local (Apache, Nginx, ou simple serveur HTTP)
-- Navigateur web moderne supportant WebP (recommandé)
+- Compte GitHub (pour déploiement automatique)
+- Compte Netlify (déploiement recommandé)
+- Navigateur web moderne supportant WebP
 
 ### Installation locale
 
 ```bash
 # Cloner le repository
-git clone [url-du-repo]
+git clone https://github.com/krismos64/methodea.git
 
 # Naviguer dans le dossier
 cd methodia
@@ -64,18 +71,38 @@ python -m http.server 8000
 # Ou avec Node.js
 npx http-server
 
-# Ou avec PHP
-php -S localhost:8000
+# Ou avec live-server
+npx live-server
 
 # Ouvrir dans le navigateur
 # http://localhost:8000
 ```
 
-### Déploiement production
+### Déploiement automatique GitHub → Netlify
 
-Le site est optimisé pour un déploiement direct sur :
-- **Netlify** (recommandé - drag & drop)
-- **Vercel**
+**Configuration en 2 étapes :**
+
+1. **Push vers GitHub**
+```bash
+git add .
+git commit -m "feat: mise à jour du site"
+git push origin main
+```
+
+2. **Configuration Netlify**
+   - Connecter le repository GitHub
+   - Branch à déployer : `main`
+   - Build command : *(laissez vide)*
+   - Publish directory : *(laissez vide)*
+   
+Le fichier `netlify.toml` configure automatiquement :
+- Optimisations (minification, compression)
+- Headers de sécurité
+- Redirections URLs propres
+- Cache stratégies
+
+### Autres plateformes supportées
+- **Vercel** (auto-deploy GitHub)
 - **GitHub Pages**
 - **Serveur web classique** (Apache/Nginx)
 
@@ -241,12 +268,33 @@ Le site est optimisé pour un déploiement direct sur :
 - [ ] Configurer sauvegarde automatique
 - [ ] Monitoring uptime et performance
 
-## 🎯 Déploiement recommandé
+## 🎯 Déploiement GitHub → Netlify
 
-**Pour Netlify (le plus simple) :**
-1. Créer compte sur netlify.com
-2. Drag & drop du dossier `methodia/`
-3. Le site est automatiquement en ligne avec HTTPS
-4. URL personnalisé disponible
+### Workflow automatique recommandé
 
-**Le site METHODEA est maintenant prêt pour la production ! 🚀**
+**1. Repository GitHub**
+```bash
+git add .
+git commit -m "feat: optimisations complètes"
+git push origin main
+```
+
+**2. Configuration Netlify**
+- Connecter repository `krismos64/methodea`
+- Branch production : `main`
+- Configuration automatique via `netlify.toml`
+
+**3. URLs propres activées**
+- `methodea.fr/caferuis` → Formation CAFERUIS
+- `methodea.fr/dscg` → Formation DSCG
+- `methodea.fr/master` → Master Marketing & RH
+- `methodea.fr/tfe` → TFE Infirmier
+
+### Avantages du workflow automatique
+✅ **Deploy Preview** : Chaque PR = URL de test  
+✅ **Rollback 1-click** : Retour version précédente  
+✅ **Headers sécurité** : Configurés automatiquement  
+✅ **Performance** : Minification et compression auto  
+✅ **HTTPS** : Certificat SSL automatique  
+
+**Le site METHODEA est production-ready avec déploiement automatique ! 🚀**
