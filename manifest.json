@@ -1,0 +1,97 @@
+{
+  "name": "METHODEA - Formation à la Recherche Scientifique",
+  "short_name": "METHODEA",
+  "description": "Coaching et formation à la recherche scientifique académique. Humain partout, IA nulle part.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/images/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Page d'accueil METHODEA"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "CAFERUIS",
+      "short_name": "CAFERUIS",
+      "description": "Formation mémoire CAFERUIS",
+      "url": "/pages/memoire-caferuis.html",
+      "icons": [
+        {
+          "src": "/assets/images/caferuis-og.png",
+          "sizes": "1200x630",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "DSCG",
+      "short_name": "DSCG",
+      "description": "Formation mémoire DSCG",
+      "url": "/pages/memoire-dscg.html",
+      "icons": [
+        {
+          "src": "/assets/images/dscg-og.png",
+          "sizes": "1200x630",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Master",
+      "short_name": "Master",
+      "description": "Formation mémoire Master",
+      "url": "/pages/memoire-master.html",
+      "icons": [
+        {
+          "src": "/assets/images/master-og.png",
+          "sizes": "1200x630",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "TFE Infirmier",
+      "short_name": "TFE",
+      "description": "Formation TFE Infirmier",
+      "url": "/pages/tfe-infirmier.html",
+      "icons": [
+        {
+          "src": "/assets/images/tfe-og.png",
+          "sizes": "1200x630",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
