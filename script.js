@@ -387,6 +387,159 @@ function initScrollAnimations() {
 }
 
 /* ========================================
+   Système de Lazy Loading moderne
+   ======================================== */
+function initializeLazyLoading() {
+    // Configuration du lazy loading pour les images
+    const lazyImageConfig = {
+        root: null,
+        rootMargin: '50px 0px', // Charger 50px avant que l'élément soit visible
+        threshold: 0.01
+    };
+    
+    // Configuration pour les images de fond et contenu lourd
+    const lazyContentConfig = {
+        root: null,
+        rootMargin: '100px 0px',
+        threshold: 0.1
+    };
+
+    // Lazy loading pour les images <img>
+    const lazyImages = document.querySelectorAll('img[data-lazy-src]');
+    if (lazyImages.length > 0 && 'IntersectionObserver' in window) {
+        const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    // Créer une image temporaire pour précharger
+                    const tempImg = new Image();
+                    tempImg.onload = () => {
+                        // Une fois l'image chargée, l'afficher avec animation
+                        img.src = img.dataset.lazySrc;
+                        if (img.dataset.lazySrcset) {
+                            img.srcset = img.dataset.lazySrcset;
+                        }
+                        img.classList.add('lazy-loaded');
+                        img.removeAttribute('data-lazy-src');
+                        img.removeAttribute('data-lazy-srcset');
+                    };
+                    tempImg.src = img.dataset.lazySrc;
+                    
+                    observer.unobserve(img);
+                }
+            });
+        }, lazyImageConfig);
+
+        lazyImages.forEach(img => {
+            // Ajouter classe pour animation CSS
+            img.classList.add('lazy-loading');
+            lazyImageObserver.observe(img);
+        });
+    }
+
+    // Lazy loading pour les images de fond CSS
+    const lazyBgElements = document.querySelectorAll('[data-lazy-bg]');
+    if (lazyBgElements.length > 0 && 'IntersectionObserver' in window) {
+        const lazyBgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    
+                    // Créer une image temporaire pour précharger
+                    const tempImg = new Image();
+                    tempImg.onload = () => {
+                        element.style.backgroundImage = `url(${element.dataset.lazyBg})`;
+                        element.classList.add('lazy-bg-loaded');
+                        element.removeAttribute('data-lazy-bg');
+                    };
+                    tempImg.src = element.dataset.lazyBg;
+                    
+                    observer.unobserve(element);
+                }
+            });
+        }, lazyContentConfig);
+
+        lazyBgElements.forEach(element => {
+            element.classList.add('lazy-bg-loading');
+            lazyBgObserver.observe(element);
+        });
+    }
+
+    // Lazy loading pour les iframes (vidéos YouTube, cartes)
+    const lazyIframes = document.querySelectorAll('iframe[data-lazy-src]');
+    if (lazyIframes.length > 0 && 'IntersectionObserver' in window) {
+        const lazyIframeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target;
+                    iframe.src = iframe.dataset.lazySrc;
+                    iframe.classList.add('lazy-loaded');
+                    iframe.removeAttribute('data-lazy-src');
+                    observer.unobserve(iframe);
+                }
+            });
+        }, lazyContentConfig);
+
+        lazyIframes.forEach(iframe => {
+            iframe.classList.add('lazy-loading');
+            lazyIframeObserver.observe(iframe);
+        });
+    }
+
+    // Fallback pour navigateurs anciens (sans Intersection Observer)
+    if (!('IntersectionObserver' in window)) {
+        console.warn('IntersectionObserver non supporté - Fallback lazy loading');
+        
+        // Charger toutes les images immédiatement pour compatibilité
+        lazyImages.forEach(img => {
+            if (img.dataset.lazySrc) {
+                img.src = img.dataset.lazySrc;
+                if (img.dataset.lazySrcset) {
+                    img.srcset = img.dataset.lazySrcset;
+                }
+                img.classList.add('lazy-loaded');
+            }
+        });
+
+        lazyBgElements.forEach(element => {
+            if (element.dataset.lazyBg) {
+                element.style.backgroundImage = `url(${element.dataset.lazyBg})`;
+                element.classList.add('lazy-bg-loaded');
+            }
+        });
+
+        lazyIframes.forEach(iframe => {
+            if (iframe.dataset.lazySrc) {
+                iframe.src = iframe.dataset.lazySrc;
+                iframe.classList.add('lazy-loaded');
+            }
+        });
+    }
+
+    console.log('✅ Lazy Loading initialisé - Images:', lazyImages.length, 'Backgrounds:', lazyBgElements.length, 'Iframes:', lazyIframes.length);
+}
+
+// Fonction utilitaire pour précharger des images critiques
+function preloadCriticalImages() {
+    const criticalImages = [
+        '/assets/images/og-image.webp',
+        '/assets/images/apple-touch-icon.webp'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        link.type = src.endsWith('.webp') ? 'image/webp' : 'image/png';
+        document.head.appendChild(link);
+    });
+    
+    console.log('✅ Images critiques préchargées:', criticalImages.length);
+}
+
+/* ========================================
    Initialisation au chargement de la page
    ======================================== */
 document.addEventListener('DOMContentLoaded', function() {
@@ -417,6 +570,9 @@ document.addEventListener('DOMContentLoaded', function() {
             window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
         });
     }
+    
+    // Initialiser le lazy loading
+    initializeLazyLoading();
     
     console.log('METHODEA - Site chargé avec succès');
 });

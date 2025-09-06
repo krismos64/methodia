@@ -1605,6 +1605,122 @@ footer::before {
 }
 
 /* ========================================
+   LAZY LOADING - Animations et transitions
+   ======================================== */
+
+/* Images en cours de chargement */
+.lazy-loading {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    background-color: #f8fafc;
+    background-image: 
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent),
+        linear-gradient(to bottom, #e2e8f0, #cbd5e1);
+    background-size: 200px 100%, 100% 100%;
+    background-repeat: no-repeat;
+    animation: lazy-shimmer 2s infinite ease-in-out;
+}
+
+/* Animation shimmer pendant le chargement */
+@keyframes lazy-shimmer {
+    0% { background-position: -200px 0, 0 0; }
+    100% { background-position: calc(100% + 200px) 0, 0 0; }
+}
+
+/* Images chargées */
+.lazy-loaded {
+    opacity: 1;
+    background: none;
+    animation: none;
+}
+
+/* Images de fond en cours de chargement */
+.lazy-bg-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.lazy-bg-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    background-size: 200px 100%, 100% 100%;
+    background-repeat: no-repeat;
+    animation: lazy-bg-shimmer 2.5s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes lazy-bg-shimmer {
+    0% { background-position: -200px 0, 0 0; }
+    100% { background-position: calc(100% + 200px) 0, 0 0; }
+}
+
+/* Masquer l'overlay une fois l'image de fond chargée */
+.lazy-bg-loaded::before {
+    display: none;
+}
+
+/* Iframes et vidéos en cours de chargement */
+iframe.lazy-loading {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s ease-out;
+}
+
+iframe.lazy-loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Support WebP avec fallback automatique */
+.webp-support {
+    background-image: url('fallback.png');
+}
+
+.webp .webp-support {
+    background-image: url('optimized.webp');
+}
+
+/* Responsive images lazy loading */
+img[data-lazy-src] {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    background-color: var(--light);
+}
+
+/* Amélioration performance pour grandes images */
+.lazy-loading img,
+.lazy-bg-loading {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.lazy-loaded img,
+.lazy-bg-loaded {
+    will-change: auto;
+}
+
+/* Placeholder amélioré avec gradient METHODEA */
+.lazy-placeholder {
+    background: var(--gradient);
+    opacity: 0.3;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+/* ========================================
    Responsive Design
    ======================================== */
 @media (max-width: 768px) {
