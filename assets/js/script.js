@@ -629,3 +629,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser le lazy loading
     initializeLazyLoading();
 });
+
+// Floating Action Button functionality
+function toggleFabMenu() {
+    const fabMenu = document.querySelector('.fab-menu');
+    const fabIcon = document.querySelector('.fab-icon');
+    const fabClose = document.querySelector('.fab-close');
+    
+    if (fabMenu && fabIcon && fabClose) {
+        const isHidden = fabMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+            // Ouvrir le menu
+            fabMenu.classList.remove('hidden');
+            fabIcon.classList.add('hidden');
+            fabClose.classList.remove('hidden');
+        } else {
+            // Fermer le menu
+            fabMenu.classList.add('hidden');
+            fabIcon.classList.remove('hidden');
+            fabClose.classList.add('hidden');
+        }
+    }
+}
+
+// Fermer le menu FAB si on clique ailleurs
+document.addEventListener('click', function(event) {
+    const fabContainer = document.querySelector('.fab-container');
+    if (fabContainer && !fabContainer.contains(event.target)) {
+        const fabMenu = document.querySelector('.fab-menu');
+        const fabIcon = document.querySelector('.fab-icon');
+        const fabClose = document.querySelector('.fab-close');
+        
+        if (fabMenu && !fabMenu.classList.contains('hidden')) {
+            fabMenu.classList.add('hidden');
+            fabIcon.classList.remove('hidden');
+            fabClose.classList.add('hidden');
+        }
+    }
+});
