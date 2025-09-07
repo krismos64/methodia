@@ -574,12 +574,14 @@ nav.scrolled {
 .roadmap-content {
     flex: 1;
     padding: 2rem;
+    padding-bottom: 5rem;
     background: white;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     margin: 0 2rem;
     border: 1px solid rgba(99, 102, 241, 0.1);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .roadmap-content:hover {
@@ -600,6 +602,7 @@ nav.scrolled {
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
     position: absolute;
     left: 50%;
+    bottom: 15px;
     transform: translateX(-50%);
     z-index: 2;
 }
