@@ -1,29 +1,7 @@
-# Redirections Netlify pour METHODEA
+# Redirections Netlify pour METHODEA - Version simplifiée pour Forms
 # URLs propres sans .html
 
-# Pages principales
 /caferuis           /pages/memoire-caferuis.html     200
 /dscg              /pages/memoire-dscg.html          200  
 /master            /pages/memoire-master.html        200
 /tfe               /pages/tfe-infirmier.html         200
-
-# Anciennes URLs avec underscores (pour rétrocompatibilité)
-/memoire_caferuis.html    /pages/memoire-caferuis.html    301!
-/memoire_dscg.html        /pages/memoire-dscg.html        301!
-/memoire_master.html      /pages/memoire-master.html      301!
-
-# Headers sécurité et performance
-/*
-  X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-
-# Cache pour assets statiques
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Cache pour pages HTML
-/*.html
-  Cache-Control: public, max-age=3600
