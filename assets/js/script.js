@@ -209,7 +209,7 @@ function showQuestion() {
             </div>
         </div>`;
 
-    const questionContainer = container.querySelector('.quiz-question-container');
+    const questionContainer = container.querySelector('#quizContent');
     if (questionContainer) {
         questionContainer.innerHTML = questionHTML;
     }
@@ -394,6 +394,13 @@ function initContactForm() {
 
 // Fermeture modal en cliquant à l'extérieur
 function initModalOutsideClick() {
+    // Fermeture en cliquant sur le bouton X
+    const closeBtn = document.querySelector('.modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Fermeture en cliquant à l'extérieur
     window.onclick = function(event) {
         const modal = document.getElementById('consultationModal');
         if (event.target == modal) {
@@ -560,6 +567,27 @@ function preloadCriticalImages() {
     });
 }
 
+// Fonction d'initialisation du quiz
+function initQuiz() {
+    const quizContainer = document.querySelector('.quiz-container');
+    if (!quizContainer) return;
+    
+    // Attacher les événements aux boutons
+    const nextBtn = quizContainer.querySelector('.quiz-btn-next');
+    const prevBtn = quizContainer.querySelector('.quiz-btn-prev');
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextQuestion);
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', previousQuestion);
+    }
+    
+    // Démarrer le quiz
+    startQuiz();
+}
+
 // Initialisation au chargement du DOM
 document.addEventListener('DOMContentLoaded', function() {
     // Initialiser les fonctions principales
@@ -570,13 +598,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initModalOutsideClick();
     initScrollAnimations();
     initPopupEvents(); // AJOUTÉ - Correction popup
+    initQuiz(); // Initialiser le quiz
     showPopup();
-
-    // Initialiser le quiz si présent
-    const quizContainer = document.querySelector('.quiz-container');
-    if (quizContainer && quizContainer.querySelector('.quiz-question-container')) {
-        startQuiz();
-    }
 
     // Initialiser le menu mobile
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
