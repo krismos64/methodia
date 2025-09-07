@@ -28,14 +28,15 @@
     <link rel="canonical" href="https://methodea.fr/pages/memoire-caferuis.html">
     
     <!-- Trusted Types Policy - PRIORITÉ SÉCURITÉ -->
-    <script src="../assets/js/trusted-types-policy.js"></script>
+    <script src="/assets/js/trusted-types-policy.js"></script>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="../assets/css/styles.css" as="style">
-    <link rel="preload" href="../assets/js/script.js" as="script">
+    <link rel="preload" href="/assets/css/caferuis-page.css" as="style">
+    <link rel="preload" href="/assets/js/script.js" as="script">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/caferuis-page.css">
+    <link rel="stylesheet" href="/assets/css/caferuis-page.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,197 +108,214 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Réussissez votre Mémoire CAFERUIS avec METHODEA</h1>
-                <p>Formation spécialisée pour les futurs directeurs d'établissements sociaux et médico-sociaux. Accompagnement personnalisé par des enseignants-chercheurs experts en management du secteur social.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Entretien gratuit 30 min</a>
-                    <a href="#programme" class="btn-secondary">Découvrir le programme</a>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Coaching Mémoire CAFERUIS</h1>
+                    <p>Accompagnement spécialisé pour votre mémoire de fonction de directeur d'établissement ou de service d'intervention sociale. Formation complète avec préparation de l'expertise technique et établissement du plan stratégique.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-primary" onclick="openModal()">Consultation gratuite</a>
+                        <a href="#programme" class="btn-secondary">Découvrir la méthode</a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="stats-container">
-                    <div class="stats-grid">
-                        <div class="stat">
-                            <span class="stat-number">15</span>
-                            <span class="stat-label">mois d'accompagnement</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100</span>
-                            <span class="stat-label">% de réussite</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">200</span>
-                            <span class="stat-label">directeurs formés</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">0</span>
-                            <span class="stat-label">% IA utilisée</span>
+                <div class="hero-visual">
+                    <div class="stats-container">
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <span class="stat-number">200+</span>
+                                <span class="stat-label">Mémoires CAFERUIS</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">92%</span>
+                                <span class="stat-label">Taux de réussite</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">16/20</span>
+                                <span class="stat-label">Note moyenne</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Professionnalisation</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About CAFERUIS Section -->
-    <section class="about-section" id="formation">
-        <div class="section-header">
-            <h2 class="section-title">Le CAFERUIS : Votre Passeport vers la Direction</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Le Certificat d'Aptitude aux Fonctions d'Encadrement et de Responsable d'Unité d'Intervention Sociale (CAFERUIS) est le diplôme de référence pour accéder aux fonctions de direction dans le secteur social et médico-social.</p>
+        <!-- Programme Section -->
+        <section class="program-section" id="programme">
+            <div class="section-header">
+                <h2 class="section-title">Méthodologie CAFERUIS</h2>
+                <p class="section-subtitle">Parcours structuré en 4 étapes pour maîtriser votre fonction de direction</p>
+            </div>
+            
+            <div class="program-timeline">
+                <div class="program-item">
+                    <div class="program-dot">1</div>
+                    <div class="program-content">
+                        <h3>Préparation de l'Expertise Technique</h3>
+                        <p>Développement approfondi de votre expertise technique en direction d'établissement social et médico-social. Maîtrise des enjeux sectoriels et des compétences managériales spécifiques.</p>
+                        <ul class="program-features">
+                            <li>Analyse des politiques publiques sectorielles</li>
+                            <li>Cadre réglementaire et juridique (CASF, autorisation, évaluation)</li>
+                            <li>Management d'équipes pluridisciplinaires</li>
+                            <li>Gestion financière et budgétaire</li>
+                            <li>Qualité et évaluation des prestations</li>
+                            <li>Partenariats institutionnels et territoriaux</li>
+                        </ul>
+                        <span class="program-duration">Mois 1-4</span>
+                    </div>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-dot">2</div>
+                    <div class="program-content">
+                        <h3>Établissement du Plan de Développement</h3>
+                        <p>Conception stratégique du projet d'établissement ou de service. Elaboration d'un plan de développement opérationnel adapté aux besoins du territoire et aux évolutions sectorielles.</p>
+                        <ul class="program-features">
+                            <li>Diagnostic territorial et analyse des besoins</li>
+                            <li>Définition du projet d'établissement</li>
+                            <li>Planification stratégique et opérationnelle</li>
+                            <li>Indicateurs de performance et de qualité</li>
+                            <li>Plan de formation et développement RH</li>
+                            <li>Budget prévisionnel et modèle économique</li>
+                        </ul>
+                        <span class="program-duration">Mois 5-8</span>
+                    </div>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-dot">3</div>
+                    <div class="program-content">
+                        <h3>Recherche Appliquée et Innovation</h3>
+                        <p>Conduite d'une recherche appliquée sur une problématique managériale ou organisationnelle. Innovation dans les pratiques professionnelles et amélioration continue des services.</p>
+                        <ul class="program-features">
+                            <li>Problématique managériale et hypothèses</li>
+                            <li>Méthodologie de recherche-action</li>
+                            <li>Collecte et analyse de données terrain</li>
+                            <li>Benchmark des bonnes pratiques</li>
+                            <li>Expérimentation et innovation sociale</li>
+                            <li>Évaluation d'impact et recommandations</li>
+                        </ul>
+                        <span class="program-duration">Mois 9-12</span>
+                    </div>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-dot">4</div>
+                    <div class="program-content">
+                        <h3>Présentation et Soutenance</h3>
+                        <p>Préparation intensive à la soutenance devant le jury. Techniques de présentation, communication managériale et défense du projet professionnel.</p>
+                        <ul class="program-features">
+                            <li>Structuration de la présentation (45 min)</li>
+                            <li>Communication managériale et leadership</li>
+                            <li>Argumentation et défense de projet</li>
+                            <li>Gestion des questions et objections</li>
+                            <li>Simulation avec jury professionnel</li>
+                            <li>Plan de carrière et évolution professionnelle</li>
+                        </ul>
+                        <span class="program-duration">Mois 13-15</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialties Section -->
+        <section class="specialties-section">
+            <div class="section-header">
+                <h2 class="section-title">Domaines d'Expertise</h2>
+                <p class="section-subtitle">Spécialisations sectorielles adaptées aux enjeux contemporains</p>
+            </div>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">👥</div>
+                    <h3>Management & Leadership</h3>
+                    <p>Développement des compétences de direction d'équipes pluridisciplinaires, conduite du changement et animation de projets transversaux dans le secteur social et médico-social.</p>
+                </div>
                 
-                <div class="key-points">
-                    <div class="key-point">
-                        <h3>📋 Niveau de Formation</h3>
-                        <p>Diplôme de niveau 6 (équivalent Bac+3/4) reconnu par l'État et les employeurs du secteur.</p>
-                    </div>
-                    
-                    <div class="key-point">
-                        <h3>🎯 Objectifs Professionnels</h3>
-                        <p>Former les futurs directeurs capables de manager des équipes pluridisciplinaires et de piloter des projets d'établissement complexes.</p>
-                    </div>
-                    
-                    <div class="key-point">
-                        <h3>🏢 Débouchés</h3>
-                        <p>Direction d'EHPAD, de centres sociaux, d'IME, de MECS, de services d'aide à domicile, de centres d'hébergement, etc.</p>
-                    </div>
+                <div class="specialty-card">
+                    <div class="specialty-icon">📊</div>
+                    <h3>Gestion & Stratégie</h3>
+                    <p>Maîtrise des outils de gestion financière, pilotage budgétaire, contrôle de gestion et élaboration de stratégies de développement adaptées aux contraintes sectorielles.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">🏗️</div>
+                    <h3>Innovation & Transformation</h3>
+                    <p>Conduite de projets innovants, transformation digitale, amélioration continue des pratiques et adaptation aux évolutions des politiques publiques.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Program Section -->
-    <section class="program-section" id="programme">
-        <div class="section-header">
-            <h2 class="section-title">Programme de Formation CAFERUIS</h2>
-            <p class="section-subtitle">Un parcours structuré en 4 domaines de compétences essentiels</p>
-        </div>
-        
-        <div class="program-timeline">
-            <div class="program-item">
-                <div class="program-dot">DC1</div>
-                <div class="program-content">
-                    <h3>Conception et Conduite de Projet</h3>
-                    <p>Maîtriser la méthodologie de projet, l'analyse des besoins, la conception de réponses adaptées et l'évaluation des impacts. Apprendre à développer une vision stratégique et à anticiper les évolutions du secteur.</p>
-                    <span class="program-duration">Mois 1-4</span>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2 class="section-title">Témoignages de Directeurs</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">L'accompagnement METHODEA m'a permis de structurer mon expertise technique et de concevoir un plan de développement innovant pour mon EHPAD. Le jury a salué la qualité professionnelle de mon travail.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LD</div>
+                        <div class="author-info">
+                            <div class="author-name">Laurent D.</div>
+                            <div class="author-role">Directeur EHPAD - CAFERUIS</div>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="program-item">
-                <div class="program-dot">DC2</div>
-                <div class="program-content">
-                    <h3>Expertise Technique et Éducative</h3>
-                    <p>Développer une expertise spécialisée dans son domaine d'intervention, maîtriser les référentiels qualité et les approches innovantes. Capacité à former et superviser les équipes techniques.</p>
-                    <span class="program-duration">Mois 5-8</span>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">La méthodologie m'a donné les clés pour élaborer un projet d'établissement cohérent. Mon mémoire sur l'innovation sociale a été remarqué et j'ai obtenu 17/20.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MF</div>
+                        <div class="author-info">
+                            <div class="author-name">Marie F.</div>
+                            <div class="author-role">Directrice ESAT - CAFERUIS</div>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="program-item">
-                <div class="program-dot">DC3</div>
-                <div class="program-content">
-                    <h3>Management et Gestion</h3>
-                    <p>Piloter les ressources humaines, financières et logistiques. Maîtriser les outils de contrôle de gestion, de GRH et de communication managériale. Leadership et conduite du changement.</p>
-                    <span class="program-duration">Mois 9-12</span>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Grâce à la recherche appliquée, j'ai pu transformer l'organisation de mon service et améliorer la qualité d'accueil. L'expertise technique acquise me sert au quotidien.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PG</div>
+                        <div class="author-info">
+                            <div class="author-name">Pascal G.</div>
+                            <div class="author-role">Directeur IME - CAFERUIS</div>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="program-item">
-                <div class="program-dot">DC4</div>
-                <div class="program-content">
-                    <h3>Dynamiques Partenariales et Institutionnelles</h3>
-                    <p>Développer les partenariats, représenter l'établissement auprès des institutions, négocier avec les financeurs et inscrire l'action dans les politiques publiques territoriales.</p>
-                    <span class="program-duration">Mois 13-15</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialties Section -->
-    <section class="specialties-section" id="expertise">
-        <div class="section-header">
-            <h2 class="section-title">Domaines d'Expertise</h2>
-            <p class="section-subtitle">Spécialisations sectorielles adaptées aux enjeux contemporains</p>
-        </div>
-        
-        <div class="specialties-grid">
-            <div class="specialty-card">
-                <div class="specialty-icon">👥</div>
-                <h3>Management & Leadership</h3>
-                <p>Développement des compétences de direction d'équipes pluridisciplinaires, conduite du changement et animation de projets transversaux dans le secteur social et médico-social.</p>
-            </div>
-            
-            <div class="specialty-card">
-                <div class="specialty-icon">📊</div>
-                <h3>Gestion & Stratégie</h3>
-                <p>Maîtrise des outils de gestion financière, pilotage budgétaire, contrôle de gestion et élaboration de stratégies de développement adaptées aux contraintes sectorielles.</p>
-            </div>
-            
-            <div class="specialty-card">
-                <div class="specialty-icon">🏗️</div>
-                <h3>Innovation & Transformation</h3>
-                <p>Conduite de projets innovants, transformation digitale, amélioration continue des pratiques et adaptation aux évolutions des politiques publiques.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="section-header">
-            <h2 class="section-title">Témoignages de Directeurs</h2>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-quote">L'accompagnement METHODEA m'a permis de structurer mon expertise technique et de concevoir un plan de développement innovant pour mon EHPAD. Le jury a salué la qualité professionnelle de mon travail.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">LD</div>
-                    <div class="author-info">
-                        <div class="author-name">Laurent D.</div>
-                        <div class="author-role">Directeur EHPAD - CAFERUIS</div>
-                        <div class="rating">★★★★★</div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">La préparation à la soutenance m'a donné une grande confiance. J'ai pu présenter mon projet avec conviction et décrocher ma certification du premier coup.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div class="author-info">
+                            <div class="author-name">Sophie L.</div>
+                            <div class="author-role">Directrice CCAS - CAFERUIS</div>
+                            <div class="rating">★★★★★</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-quote">Grâce à la méthode METHODEA, j'ai pu articuler théorie et pratique pour développer une vision stratégique de mon centre social. L'approche 100% humaine fait vraiment la différence.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">CM</div>
-                    <div class="author-info">
-                        <div class="author-name">Catherine M.</div>
-                        <div class="author-role">Directrice Centre Social - CAFERUIS</div>
-                        <div class="rating">★★★★★</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-quote">Le coaching personnalisé m'a permis d'approfondir mes compétences en gestion financière et en GRH. Mon mémoire portait sur l'optimisation des coûts, j'ai obtenu 18/20.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JM</div>
-                    <div class="author-info">
-                        <div class="author-name">Jean-Michel R.</div>
-                        <div class="author-role">Directeur MECS - CAFERUIS</div>
-                        <div class="rating">★★★★★</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="consultation">
-        <div class="cta-content">
-            <h2>Prêt à Devenir Directeur ?</h2>
-            <p>Bénéficiez d'un entretien gratuit de 30 minutes avec un enseignant-chercheur expert en management du secteur social. Découvrez comment METHODEA peut accélérer votre réussite au CAFERUIS.</p>
-            <a href="#" class="cta-button">Réserver mon entretien gratuit</a>
-        </div>
-    </section>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Prêt à Diriger avec Excellence ?</h2>
+                <p>Bénéficiez d'un accompagnement personnalisé par des experts en direction d'établissements sociaux et médico-sociaux. Consultation gratuite pour définir votre parcours de certification.</p>
+                <a href="#" class="cta-button" onclick="openModal()">Je lance mon CAFERUIS</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -307,7 +325,7 @@
                 <p>Formation spécialisée CAFERUIS<br>Humain partout, IA nulle part</p>
             </div>
             <div class="footer-links">
-                <a href="index.html">Retour à l'accueil</a>
+                <a href="../index.html">Retour à l'accueil</a>
                 <a href="#programme">Programme détaillé</a>
                 <a href="#">Contact spécialisé CAFERUIS</a>
             </div>
@@ -332,10 +350,14 @@
         <div class="modal-content">
             <button class="modal-close">×</button>
             <div class="modal-header">
-                <h3 class="modal-title">Formation CAFERUIS - Entretien Gratuit</h3>
-                <p class="modal-subtitle">30 minutes avec un expert en management social</p>
+                <h3 class="modal-title">Formation CAFERUIS - Consultation Gratuite</h3>
+                <p class="modal-subtitle">Entretien personnalisé avec un expert</p>
             </div>
-            <form>
+            <form netlify netlify-honeypot="bot-field" action="/merci.html" method="POST" name="entretien-caferuis">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="entretien-caferuis" />
+                <input type="hidden" name="formation-type" value="CAFERUIS" />
+                
                 <div class="form-group">
                     <label for="name">Nom complet *</label>
                     <input type="text" id="name" name="name" required>
@@ -374,7 +396,7 @@
                     <label for="message">Votre projet professionnel</label>
                     <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet de direction, vos objectifs..."></textarea>
                 </div>
-                <button type="submit" class="form-submit">Réserver mon entretien CAFERUIS</button>
+                <button type="submit" class="form-submit">Réserver ma consultation CAFERUIS</button>
             </form>
         </div>
     </div>
@@ -390,43 +412,29 @@
                 "@type": "Review",
                 "author": {
                     "@type": "Person",
-                    "name": "Sandrine M."
+                    "name": "Laurent D."
                 },
                 "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
                     "bestRating": "5"
                 },
-                "reviewBody": "L'accompagnement METHODEA m'a permis de structurer parfaitement mon mémoire sur le management en EHPAD. La méthode m'a fait gagner un temps précieux et j'ai obtenu 17/20.",
+                "reviewBody": "L'accompagnement METHODEA m'a permis de structurer mon expertise technique et de concevoir un plan de développement innovant pour mon EHPAD. Le jury a salué la qualité professionnelle de mon travail.",
                 "datePublished": "2024-11-15"
             },
             {
                 "@type": "Review", 
                 "author": {
                     "@type": "Person",
-                    "name": "Pierre D."
+                    "name": "Marie F."
                 },
                 "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
                     "bestRating": "5" 
                 },
-                "reviewBody": "Formation excellente ! La méthodologie de recherche appliquée aux établissements sociaux est très pertinente. Mon jury a souligné la qualité professionnelle de mon travail.",
+                "reviewBody": "La méthodologie m'a donné les clés pour élaborer un projet d'établissement cohérent. Mon mémoire sur l'innovation sociale a été remarqué et j'ai obtenu 17/20.",
                 "datePublished": "2024-10-22"
-            },
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person", 
-                    "name": "Marie-Claire L."
-                },
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "reviewBody": "L'approche 100% humaine de METHODEA fait toute la différence. Mon mémoire sur l'innovation sociale a été remarqué et j'ai décroché le poste de directrice.",
-                "datePublished": "2024-09-30"
             }
         ],
         "aggregateRating": {
@@ -438,9 +446,7 @@
     }
     </script>
 
-    </main>
-
     <!-- JavaScript -->
-    <script src="../assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

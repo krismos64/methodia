@@ -52,9 +52,9 @@
     
     <!-- Liens vers les fichiers externes -->
     <!-- Trusted Types Policy - PRIORITÉ SÉCURITÉ -->
-    <script src="../assets/js/trusted-types-policy.js"></script>
+    <script src="/assets/js/trusted-types-policy.js"></script>
     
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/tfe-page.css">
     
     <!-- Données structurées Schema.org -->
     <script type="application/ld+json">
@@ -314,6 +314,85 @@
         </div>
     </section>
 
+    <!-- Formulaire Section -->
+    <section class="form-section" id="contact">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Demandez votre Consultation Gratuite</h2>
+                <p>Échangeons sur votre projet TFE et définissons ensemble la stratégie pour votre réussite</p>
+            </div>
+            
+            <form netlify netlify-honeypot="bot-field" action="/merci.html" method="POST" name="entretien-tfe" class="contact-form">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="entretien-tfe" />
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ifsi">IFSI de formation</label>
+                        <input type="text" id="ifsi" name="ifsi" placeholder="Nom de votre Institut de Formation">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="sujet">Sujet ou thématique envisagée</label>
+                        <input type="text" id="sujet" name="sujet" placeholder="Ex: Douleur chronique, soins palliatifs, éducation thérapeutique...">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="avancement">Où en êtes-vous dans votre TFE ?</label>
+                        <select id="avancement" name="avancement" required>
+                            <option value="">Choisissez votre situation</option>
+                            <option value="question-depart">Recherche de la question de départ</option>
+                            <option value="note-recherche">Élaboration de la note de recherche</option>
+                            <option value="methodologie">Choix méthodologique</option>
+                            <option value="cadre-theorique">Construction du cadre théorique</option>
+                            <option value="collecte-donnees">Collecte des données</option>
+                            <option value="analyse">Analyse et rédaction</option>
+                            <option value="finalisation">Finalisation et soutenance</option>
+                            <option value="autre">Autre situation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Décrivez brièvement vos difficultés ou questions</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Expliquez-nous vos préoccupations, vos objectifs ou toute question spécifique..."></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="urgence" value="oui">
+                            <span class="checkmark"></span>
+                            Demande urgente (soutenance dans moins de 2 mois)
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">
+                        <span>Demander ma consultation gratuite</span>
+                    </button>
+                    <p class="form-note">
+                        * Champs obligatoires. Vos données sont protégées et utilisées uniquement pour vous recontacter.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section" id="consultation">
         <div class="cta-content">
@@ -369,6 +448,6 @@
     </script>
 
     <!-- Lien vers le script externe -->
-    <script src="../assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
