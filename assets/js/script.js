@@ -381,13 +381,10 @@ function initContactForm() {
     const form = document.querySelector('.modal-content form');
     if (form) {
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            alert('Merci pour votre demande! Un enseignant-chercheur vous contactera dans les 24h.');
+            // Ne pas empêcher la soumission - laisser Netlify prendre le relais
+            // Le formulaire sera soumis normalement et redirigé vers /merci.html
+            console.log('📧 Formulaire soumis vers Netlify Forms...');
             closeModal();
-            form.reset();
         });
     }
 }
