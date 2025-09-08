@@ -1,8 +1,8 @@
-# METHODEA - Formation à la Recherche Scientifique
+# METHODIA - Formation à la Recherche Scientifique
 
 ## 🎓 À propos
 
-METHODEA est un service de coaching et de formation à la recherche scientifique académique, proposant un accompagnement 100% humain par des enseignants-chercheurs expérimentés.
+METHODIA est un service de coaching et de formation à la recherche scientifique académique, proposant un accompagnement 100% humain par des enseignants-chercheurs expérimentés.
 
 **Slogan** : "Humain partout, IA nulle part"
 
@@ -63,7 +63,7 @@ methodia/
 
 ```bash
 # Cloner le repository
-git clone https://github.com/krismos64/methodea.git
+git clone https://github.com/krismos64/methodia.git
 
 # Naviguer dans le dossier
 cd methodia
@@ -266,7 +266,7 @@ Le fichier `netlify.toml` configure automatiquement :
 
 - [x] **Suppression minification** : Facilite la maintenance et debugging
 - [x] **Correction popup CTA** : Fermeture fonctionnelle sur mobile et desktop
-- [x] **Nettoyage service worker** : Élimination cache persistant problématique  
+- [x] **Nettoyage service worker** : Élimination cache persistant problématique
 - [x] **Amélioration UX mobile** : Affichage popup complet, zone tactile élargie
 - [x] **Délégation d'événements** : Event listeners robustes et performants
 - [x] **Cache busting agressif** : URLs avec timestamps pour forcer rechargement
@@ -321,16 +321,16 @@ git push origin main
 
 **2. Configuration Netlify**
 
-- Connecter repository `krismos64/methodea`
+- Connecter repository `krismos64/methodia`
 - Branch production : `main`
 - Configuration automatique via `netlify.toml`
 
 **3. URLs propres activées**
 
-- `methodea.fr/caferuis` → Formation CAFERUIS
-- `methodea.fr/dscg` → Formation DSCG
-- `methodea.fr/master` → Master Marketing & RH
-- `methodea.fr/tfe` → TFE Infirmier
+- `methodia.fr/caferuis` → Formation CAFERUIS
+- `methodia.fr/dscg` → Formation DSCG
+- `methodia.fr/master` → Master Marketing & RH
+- `methodia.fr/tfe` → TFE Infirmier
 
 ### Avantages du workflow automatique
 
@@ -345,21 +345,27 @@ git push origin main
 ### Problèmes courants et solutions
 
 #### ❌ Popup "30 Minutes Gratuites" ne se ferme pas
+
 **Solution appliquée (Sept 2024) :**
+
 - ✅ Délégation d'événements robuste
-- ✅ Support tactile mobile amélioré  
+- ✅ Support tactile mobile amélioré
 - ✅ Zone de touch élargie (40px)
 - ✅ Event listeners avec `closest()` pour robustesse
 
 #### ❌ Service Worker cache les anciens fichiers
+
 **Solution appliquée (Sept 2024) :**
+
 - ✅ Service Worker de nettoyage créé (`sw.js`)
 - ✅ Cache busting avec timestamps
 - ✅ Configuration `.htaccess` anti-cache
 - ✅ Rechargement automatique après nettoyage
 
 #### ❌ Fichiers minifiés difficiles à maintenir
+
 **Solution appliquée (Sept 2024) :**
+
 - ✅ Suppression des fichiers `.min.css` et `.min.js`
 - ✅ Fichiers sources lisibles et commentés
 - ✅ Maintenance simplifiée
@@ -392,7 +398,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 **Développé par :** Christophe - [christophe-dev-freelance.fr](https://christophe-dev-freelance.fr)  
 **Documentation complète :** Voir `/docs/RAPPORT-CLIENT.md`  
-**Dernière mise à jour :** Septembre 2024 - Corrections popup et maintenance
+**Dernière mise à jour :** Septembre 2024 - Mise à jour nom du projet et corrections
 
 ---
 
