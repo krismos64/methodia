@@ -615,14 +615,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialiser le bouton WhatsApp
-    const whatsappButton = document.querySelector('.whatsapp-fab');
-    if (whatsappButton) {
-        whatsappButton.addEventListener('click', function(e) {
+    // Initialiser le bouton WhatsApp gauche
+    const whatsappButtonLeft = document.querySelector('.whatsapp-button-left');
+    if (whatsappButtonLeft) {
+        whatsappButtonLeft.addEventListener('click', function(e) {
             e.preventDefault();
             const phoneNumber = '33680356022';
             const message = encodeURIComponent('Bonjour, je souhaite des informations sur la formation METHODEA');
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`);
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
         });
     }
 
