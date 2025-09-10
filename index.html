@@ -86,11 +86,11 @@
             <div class="logo">
                 <div>
                     METHODEA 
-                    <span style="font-size: 0.7em; color: #888; margin-left: 5px;">(By</span>
+                    <span class="logo-by-text" style="font-size: 0.7em; margin-left: 5px;">(By</span>
                     <img src="assets/images/logo-staka.png" alt="Staka" style="height: 20px; margin: 0 5px; vertical-align: middle;">
-                    <span style="font-size: 0.7em; color: #888;">)</span>
+                    <span class="logo-by-text" style="font-size: 0.7em;">)</span>
                 </div>
-                <div style="font-size: 0.6em; color: #6366f1; font-weight: 500; margin-top: 2px;">Votre guide vers la soutenance</div>
+                <div class="logo-subtitle" style="font-size: 0.6em; margin-top: 2px;">Votre guide vers la soutenance</div>
             </div>
             <div class="nav-links">
                 <a href="#home">Accueil</a>
@@ -133,19 +133,23 @@
                 <div class="stats-container">
                     <div class="stats-grid">
                         <div class="stat">
-                            <span class="stat-number">2500</span>
+                            <div class="stat-icon">👨‍🎓</div>
+                            <span class="stat-number">2500+</span>
                             <span class="stat-label">Étudiants formés</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">97</span>
+                            <div class="stat-icon">🎯</div>
+                            <span class="stat-number">97%</span>
                             <span class="stat-label">Taux de réussite</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">-70</span>
-                            <span class="stat-label">Temps de recherche</span>
+                            <div class="stat-icon">⚡</div>
+                            <span class="stat-number">-70%</span>
+                            <span class="stat-label">Temps économisé</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">100</span>
+                            <div class="stat-icon">🤝</div>
+                            <span class="stat-number">100%</span>
                             <span class="stat-label">Méthode humaine</span>
                         </div>
                     </div>
@@ -454,58 +458,59 @@
     </section>
 
     <!-- Book Section -->
-    <section class="book-promotion" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 30px 20px; margin-top: 40px;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; justify-content: center;">
+    <section class="book-promotion">
+        <div class="book-container">
+            <div class="book-content-wrapper">
                 <!-- Book Image -->
-                <div style="flex: 0 0 280px; text-align: center;">
-                    <img src="assets/images/livre1.png" alt="Le guide ultime de la rédaction et de la correction de manuscrits" loading="lazy" style="width: 100%; max-width: 280px; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="book-image-container">
+                    <img src="assets/images/livre1.png" 
+                         alt="Le guide ultime de la rédaction et de la correction de manuscrits" 
+                         loading="lazy" 
+                         class="book-image">
                 </div>
                 
                 <!-- Book Content -->
-                <div style="flex: 1; min-width: 300px;">
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                        <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; display: inline-block; margin-bottom: 15px;">NOUVEAU LIVRE</span>
+                <div class="book-text-content">
+                    <div class="book-card">
+                        <span class="book-badge">NOUVEAU LIVRE</span>
                         
-                        <h2 style="color: #2c3e50; font-size: 2em; margin-bottom: 15px; font-weight: bold;">Le guide ultime de la rédaction et de la correction de manuscrits</h2>
+                        <h2 class="book-title">Le guide ultime de la rédaction et de la correction de manuscrits</h2>
                         
-                        <p style="color: #7f8c8d; font-size: 1.1em; margin-bottom: 10px;">
+                        <p class="book-author">
                             <strong>Par Charles Tate</strong> - Directeur de Staka.fr
                         </p>
                         
-                        <p style="color: #34495e; line-height: 1.6; margin-bottom: 20px;">
+                        <p class="book-description">
                             Les clés du succès de la rédaction et de la correction de mémoires. 
                             Un guide complet qui vous accompagne dans la maîtrise des techniques de rédaction académique et de correction 
                             professionnelle de vos travaux universitaires.
                         </p>
                         
-                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <svg style="width: 20px; height: 20px; color: #27ae60;" viewBox="0 0 24 24" fill="currentColor">
+                        <div class="book-features">
+                            <div class="book-feature">
+                                <svg class="book-feature-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                                 </svg>
-                                <span style="color: #2c3e50;">Méthodologie complète</span>
+                                <span class="book-feature-text">Méthodologie complète</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <svg style="width: 20px; height: 20px; color: #27ae60;" viewBox="0 0 24 24" fill="currentColor">
+                            <div class="book-feature">
+                                <svg class="book-feature-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                                 </svg>
-                                <span style="color: #2c3e50;">Conseils pratiques</span>
+                                <span class="book-feature-text">Conseils pratiques</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <svg style="width: 20px; height: 20px; color: #27ae60;" viewBox="0 0 24 24" fill="currentColor">
+                            <div class="book-feature">
+                                <svg class="book-feature-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                                 </svg>
-                                <span style="color: #2c3e50;">Exemples concrets</span>
+                                <span class="book-feature-text">Exemples concrets</span>
                             </div>
                         </div>
                         
                         <a href="https://www.fnac.com/livre-numerique/a16201306/Charles-Tate-Le-guide-ultime-de-la-redaction-et-de-la-correction-de-manuscrits" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;"
-                           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 7px 20px rgba(102, 126, 234, 0.6)'"
-                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(102, 126, 234, 0.4)'">
+                           class="book-cta-button">
                             Découvrir le livre sur la FNAC →
                         </a>
                     </div>
