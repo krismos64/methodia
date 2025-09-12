@@ -54,7 +54,7 @@
     <!-- Trusted Types Policy - PRIORITÉ SÉCURITÉ -->
     <script src="/assets/js/trusted-types-policy.js"></script>
     
-    <link rel="stylesheet" href="/assets/css/tfe-page.css">
+    <link rel="stylesheet" href="/assets/css/tfe-page.css?v=2.0">
     
     <!-- Données structurées Schema.org -->
     <script type="application/ld+json">
@@ -123,7 +123,7 @@
                 <h1>Coaching TFE Infirmier</h1>
                 <p>Accompagnement spécialisé pour la réalisation de votre Travail de Fin d'Études en sciences infirmières. Méthode éprouvée par des formateurs experts du domaine de la santé.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Consultation gratuite</a>
+                    <a href="#" class="btn-primary" onclick="openModal()">Consultation gratuite</a>
                     <a href="#programme" class="btn-secondary">Voir le programme</a>
                 </div>
             </div>
@@ -328,7 +328,117 @@
         </div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Réservez Votre Entretien Gratuit</h3>
+                <p class="modal-subtitle">30 minutes avec un enseignant-chercheur expert</p>
+            </div>
+            <form netlify netlify-honeypot="bot-field" action="/merci.html" method="POST" name="entretien-gratuit">
+                <!-- Champ honeypot pour éviter le spam -->
+                <input type="hidden" name="bot-field" />
+                <!-- Champ pour l'email de notification -->
+                <input type="hidden" name="form-name" value="entretien-gratuit" />
+                <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="discipline">Discipline *</label>
+                    <select id="discipline" name="discipline" required>
+                        <option value="">Sélectionnez...</option>
+                        <option value="tfe-infirmier">TFE Infirmier</option>
+                        <option value="sciences-infirmieres">Sciences infirmières</option>
+                        <option value="soins-infirmiers">Soins infirmiers</option>
+                        <option value="sante-publique">Santé publique</option>
+                        <option value="autre">Autre domaine santé</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="level">Niveau d'études *</label>
+                    <select id="level" name="level" required>
+                        <option value="">Sélectionnez...</option>
+                        <option value="ifsi">IFSI (Institut de Formation en Soins Infirmiers)</option>
+                        <option value="bachelor">Bachelor</option>
+                        <option value="licence">Licence</option>
+                        <option value="master">Master</option>
+                        <option value="specialisation">Formation spécialisée</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="urgency">Urgence du projet</label>
+                    <select id="urgency" name="urgency">
+                        <option value="">Sélectionnez...</option>
+                        <option value="urgent">Urgent (< 3 mois)</option>
+                        <option value="moyen">Moyen (3-6 mois)</option>
+                        <option value="long">Long terme (> 6 mois)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Décrivez votre projet TFE</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Sujet de recherche, problématique, difficultés rencontrées, objectifs..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Réserver mon entretien gratuit</button>
+            </form>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="/assets/js/script.js"></script>
+    <script>
+        // Gestion des événements de la modale
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('consultationModal');
+            const modalClose = document.querySelector('.modal-close');
+            
+            // Fermer la modale avec le bouton X
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+            
+            // Fermer la modale en cliquant en dehors
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+            
+            // Fermer la modale avec Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+
+        // Fonctions pour ouvrir et fermer la modale
+        function openModal() {
+            const modal = document.getElementById('consultationModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('consultationModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
 </body>
 </html>
