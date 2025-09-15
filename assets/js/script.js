@@ -52,15 +52,107 @@ function closePopup() {
 }
 
 function showPopup() {
-    const popup = document.getElementById('popupCTA');
-    const popupClosed = localStorage.getItem('popupClosed');
-    if (popup && popupClosed !== 'true') {
+    // Attendre que le DOM soit vraiment prêt
+    const initPopup = () => {
+        const popup = document.getElementById('popupCTA');
+        const popupClosed = localStorage.getItem('popupClosed');
+
+        console.log('🔍 Vérification popup:', {
+            popup: !!popup,
+            popupClosed,
+            popupElement: popup,
+            currentTime: new Date().toLocaleTimeString()
+        });
+
+        if (!popup) {
+            console.error('❌ Popup #popupCTA not found in DOM!');
+            // Retry dans 2 secondes au cas où le DOM ne serait pas prêt
+            setTimeout(initPopup, 2000);
+            return;
+        }
+
+        if (popupClosed === 'true') {
+            console.log('ℹ️ Popup déjà fermée par l\'utilisateur');
+
+            // En mode développement (localhost), reset automatique
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log('🛠 Mode développement détecté - Reset automatique du popup');
+                localStorage.removeItem('popupClosed');
+                // Continue l'exécution
+            } else {
+                return;
+            }
+        }
+
+        console.log('⏰ Popup programmée dans 5 secondes (test rapide)...');
+
+        // Réduire le délai pour test (5 secondes au lieu de 15)
         setTimeout(() => {
-            popup.style.display = 'block';
-            popup.classList.add('active');
-            console.log('📢 Popup affichée');
-        }, 15000);
+            try {
+                popup.style.display = 'block';
+                popup.classList.add('active');
+                console.log('📢 Popup affichée avec succès!');
+
+                // Log des styles appliqués
+                const computedStyle = window.getComputedStyle(popup);
+                console.log('🎨 Styles popup:', {
+                    display: computedStyle.display,
+                    position: computedStyle.position,
+                    zIndex: computedStyle.zIndex,
+                    visibility: computedStyle.visibility
+                });
+            } catch (error) {
+                console.error('❌ Erreur lors de l\'affichage du popup:', error);
+            }
+        }, 5000); // 5 secondes pour test
+    };
+
+    // Exécuter immédiatement ou attendre que le DOM soit prêt
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPopup);
+    } else {
+        initPopup();
     }
+}
+
+// Fonction de test pour forcer l'affichage du popup
+function forceShowPopup() {
+    const popup = document.getElementById('popupCTA');
+    console.log('🔧 Test forcé du popup...');
+
+    if (!popup) {
+        console.error('❌ Élément popup non trouvé!');
+        // Lister tous les éléments avec popup dans leur ID/classe
+        const allElements = document.querySelectorAll('*[id*="popup"], *[class*="popup"]');
+        console.log('🔍 Éléments avec "popup":', allElements);
+        return false;
+    }
+
+    // Reset complet du popup
+    popup.style.cssText = '';
+    popup.className = 'popup-cta';
+
+    // Forcer l'affichage
+    popup.style.display = 'block !important';
+    popup.style.position = 'fixed';
+    popup.style.bottom = '100px';
+    popup.style.right = '30px';
+    popup.style.zIndex = '9999';
+    popup.style.backgroundColor = 'white';
+    popup.style.border = '2px solid #1976D2';
+    popup.style.borderRadius = '15px';
+    popup.style.padding = '20px';
+    popup.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+    popup.classList.add('active');
+
+    console.log('✨ Popup forcée à s\'afficher avec styles inline!');
+    return true;
+}
+
+// Fonction pour réinitialiser le popup
+function resetPopup() {
+    localStorage.removeItem('popupClosed');
+    console.log('🔄 Popup reset - elle apparaîtra à nouveau');
 }
 
 // Initialisation événements popup - VERSION FINALE CORRIGÉE
@@ -587,6 +679,8 @@ function initQuiz() {
 
 // Initialisation au chargement du DOM
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 DOM chargé, initialisation des composants...');
+
     // Initialiser les fonctions principales
     initSmoothScroll();
     initNavbarScroll();
@@ -597,6 +691,36 @@ document.addEventListener('DOMContentLoaded', function() {
     initPopupEvents(); // AJOUTÉ - Correction popup
     initQuiz(); // Initialiser le quiz
     showPopup();
+
+    // Raccourcis clavier pour tester le popup (dev uniquement)
+    document.addEventListener('keydown', function(e) {
+        // Ctrl + P = forcer affichage popup
+        if (e.ctrlKey && e.key === 'p') {
+            e.preventDefault();
+            const success = forceShowPopup();
+            if (success) {
+                alert('Popup affichée ! Vérifiez en bas à droite.');
+            }
+        }
+        // Ctrl + Shift + R = reset popup
+        if (e.ctrlKey && e.key === 'R' && e.shiftKey) {
+            e.preventDefault();
+            resetPopup();
+            alert('Popup reset! Elle devrait réapparaître après 5 secondes.');
+        }
+    });
+
+    // Test automatique après 3 secondes pour déboguer
+    setTimeout(() => {
+        console.log('🔍 Test automatique du popup...');
+        const popup = document.getElementById('popupCTA');
+        if (popup) {
+            console.log('✅ Élément popup trouvé:', popup);
+            console.log('🎨 Styles actuels:', window.getComputedStyle(popup).display);
+        } else {
+            console.error('❌ Élément popup NON trouvé après 3 secondes!');
+        }
+    }, 3000);
 
     // Initialiser le menu mobile
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
