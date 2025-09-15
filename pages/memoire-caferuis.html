@@ -28,14 +28,57 @@
     <link rel="canonical" href="https://methodea.fr/pages/memoire-caferuis.html">
     
     <!-- Trusted Types Policy - PRIORITÉ SÉCURITÉ -->
-    <script src="/assets/js/trusted-types-policy.js"></script>
+    <script src="../assets/js/trusted-types-policy.js"></script>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="/assets/css/caferuis-page.css" as="style">
-    <link rel="preload" href="/assets/js/script.js" as="script">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/caferuis-page.css">
+    <link rel="preload" href="../assets/css/caferuis-page.css?v=1757309249" as="style">
+    <link rel="preload" href="../assets/js/script.js" as="script">
+
+    <!-- CSS FORCE - Couleurs EXACTES d'index.html -->
+    <style>
+    /* ATTENTION: Selon vous, les couleurs d'index.html ne sont PAS violettes,
+       donc je vais utiliser les couleurs BLEUES du fichier styles.css qui est le vrai design */
+    :root{
+        --primary:#1976D2 !important;
+        --primary-dark:#0D47A1 !important;
+        --primary-light:#42A5F5 !important;
+        --secondary:#00BCD4 !important;
+        --accent:#1565C0 !important;
+        --success:#4CAF50 !important;
+        --dark:#0F172A !important;
+        --light:#F8FAFC !important;
+        --white:#FFFFFF !important;
+        --gradient:linear-gradient(135deg, #0D47A1 0%, #1976D2 50%, #42A5F5 100%) !important;
+        --gradient-alt:linear-gradient(135deg, #0D47A1 0%, #1976D2 100%) !important;
+        --gradient-success:linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%) !important;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:var(--dark);overflow-x:hidden;background:var(--white)}
+    nav{position:fixed;top:0;width:100%;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(16px) saturate(120%);z-index:1000;box-shadow:0 2px 8px rgba(25, 118, 210, 0.12);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);border-bottom: 1px solid rgba(25, 118, 210, 0.08);}
+    nav.scrolled{box-shadow:0 4px 16px rgba(25, 118, 210, 0.15);background: rgba(248, 250, 252, 0.98);}
+    .nav-container{max-width:1280px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.75rem;font-weight:800;color:var(--primary) !important;animation:glow 3s ease-in-out infinite;}
+    @keyframes glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.2)}}
+    .hero{margin-top:80px;min-height:calc(100vh - 80px);background:linear-gradient(180deg,var(--light) 0%,rgba(25, 118, 210, 0.05) 100%);position:relative;display:flex;align-items:center;overflow:hidden}
+    .hero-content{max-width:1280px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+    .hero-text h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;color:var(--primary) !important;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1)}
+    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero-text p{font-size:1.25rem;color:#64748b;margin-bottom:2.5rem;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s both}
+    .hero-buttons{display:flex;gap:1.5rem;flex-wrap:wrap;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.4s both}
+    .btn-primary{background:var(--gradient) !important;color:white;padding:1rem 2.5rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;box-shadow:0 10px 40px rgba(25, 118, 210, 0.3) !important;position:relative;overflow:hidden}
+    .btn-secondary{background:transparent;color:var(--primary) !important;padding:1rem 2.5rem;border:2px solid var(--primary);border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;position:relative;overflow:hidden}
+    .stats-container{background:white;border-radius:30px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.1);position:relative;overflow:hidden}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .stat-number{font-size:2.5rem;font-weight:800;color:var(--primary) !important;display:block}
+    .section-title{color:var(--primary) !important;}
+    .program-dot{background:var(--gradient) !important;box-shadow:0 15px 40px rgba(25, 118, 210, 0.4) !important;}
+    .specialty-icon{background:var(--gradient) !important;box-shadow:0 10px 30px rgba(25, 118, 210, 0.3) !important;}
+    .author-avatar{background:var(--gradient) !important;box-shadow:0 10px 30px rgba(25, 118, 210, 0.3) !important;}
+    .cta-section{background:var(--gradient) !important;}
+    @media (max-width:768px){.hero-content{grid-template-columns:1fr;gap:3rem}.hero-text h1{font-size:2.5rem}.hero-buttons{flex-direction:column;width:100%}.btn-primary,.btn-secondary{width:100%;text-align:center}.stats-grid{grid-template-columns:1fr}}
+    </style>
+    <!-- CSS complémentaire pour le reste -->
+    <link rel="stylesheet" href="../assets/css/caferuis-page.css?v=1757309249">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -489,7 +532,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script>
         // Gestion des événements de la modale
         document.addEventListener('DOMContentLoaded', function() {
