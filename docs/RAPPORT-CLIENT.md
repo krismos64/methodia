@@ -891,7 +891,7 @@ gratuit" → Modal
 - ✅ **Gratuit jusqu'à 100 soumissions/mois** (largement suffisant)
 - ✅ **Intégration native** avec l'hébergement Netlify existant
 - ✅ **Sans backend** - Aucun serveur à gérer
-- ✅ **Emails automatiques** vers `contact@staka.fr`
+- ✅ **Emails automatiques** activés
 - ✅ **Protection spam** intégrée (honeypot)
 
 ### 🔧 **Configuration technique détaillée**
@@ -948,7 +948,7 @@ gratuit" → Modal
   <body>
     <!-- Icône succès + Message de confirmation -->
     <!-- Prochaines étapes détaillées -->
-    <!-- Contact direct contact@staka.fr -->
+    <!-- Contact direct supprimé -->
     <!-- Countdown JavaScript 10s → retour accueil -->
   </body>
 </html>
@@ -987,14 +987,14 @@ form.addEventListener("submit", function (e) {
 6. **Confirmation visuelle** + informations prochaines étapes
 7. **Retour automatique** à l'accueil après 10s
 
-#### **Côté propriétaire (contact@staka.fr) :**
+#### **Côté propriétaire :**
 
 1. **Email automatique immédiat** de `formresponses@netlify.com`
 2. **Toutes les données** structurées dans l'email :
 
 ```
 De: formresponses@netlify.com
-À: contact@staka.fr
+À: [Email de notification configuré]
 Objet: New form submission
 
 Form Name: entretien-gratuit
@@ -1037,7 +1037,7 @@ Date: 7 septembre 2024, 18:45
 #### **Résultat final :**
 
 ✅ **Formulaire détecté** : `entretien-gratuit` visible dans Netlify Dashboard
-✅ **Emails fonctionnels** : Notifications vers `contact@staka.fr` activées
+✅ **Emails fonctionnels** : Notifications activées
 ✅ **Protection spam** : Honeypot field opérationnel
 ✅ **UX parfaite** : Redirection fluide vers page de remerciement
 
