@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching Mémoire CAFERUIS - METHODEA | Formation 100% Humaine</title>
+    <title>Coaching mémoire CAFERUIS - METHODEA | Formation 100% Humaine</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Accompagnement personnalisé pour votre mémoire CAFERUIS. Formation 100% humaine par des enseignants-chercheurs experts en gestion et management social.">
@@ -31,55 +31,24 @@
     <script src="../assets/js/trusted-types-policy.js"></script>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="../assets/css/caferuis-page.css?v=1757309249" as="style">
+    <link rel="preload" href="../assets/css/styles.css?v=1757309245" as="style">
     <link rel="preload" href="../assets/js/script.js" as="script">
 
-    <!-- CSS FORCE - Couleurs EXACTES d'index.html -->
+    <link rel="stylesheet" href="../assets/css/styles.css?v=1757309245">
+
     <style>
-    /* ATTENTION: Selon vous, les couleurs d'index.html ne sont PAS violettes,
-       donc je vais utiliser les couleurs BLEUES du fichier styles.css qui est le vrai design */
     :root{
-        --primary:#1976D2 !important;
-        --primary-dark:#0D47A1 !important;
-        --primary-light:#42A5F5 !important;
-        --secondary:#00BCD4 !important;
-        --accent:#1565C0 !important;
-        --success:#4CAF50 !important;
-        --dark:#0F172A !important;
-        --light:#F8FAFC !important;
-        --white:#FFFFFF !important;
-        --gradient:linear-gradient(135deg, #0D47A1 0%, #1976D2 50%, #42A5F5 100%) !important;
-        --gradient-alt:linear-gradient(135deg, #0D47A1 0%, #1976D2 100%) !important;
-        --gradient-success:linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%) !important;
+        --primary:#6366f1 !important;
+        --gradient:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#ec4899 100%) !important;
     }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:var(--dark);overflow-x:hidden;background:var(--white)}
-    nav{position:fixed;top:0;width:100%;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(16px) saturate(120%);z-index:1000;box-shadow:0 2px 8px rgba(25, 118, 210, 0.12);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);border-bottom: 1px solid rgba(25, 118, 210, 0.08);}
-    nav.scrolled{box-shadow:0 4px 16px rgba(25, 118, 210, 0.15);background: rgba(248, 250, 252, 0.98);}
-    .nav-container{max-width:1280px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.75rem;font-weight:800;color:var(--primary) !important;animation:glow 3s ease-in-out infinite;}
-    @keyframes glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.2)}}
-    .hero{margin-top:80px;min-height:calc(100vh - 80px);background:linear-gradient(180deg,var(--light) 0%,rgba(25, 118, 210, 0.05) 100%);position:relative;display:flex;align-items:center;overflow:hidden}
-    .hero-content{max-width:1280px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
-    .hero-text h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;color:var(--primary) !important;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1)}
-    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    .hero-text p{font-size:1.25rem;color:#64748b;margin-bottom:2.5rem;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s both}
-    .hero-buttons{display:flex;gap:1.5rem;flex-wrap:wrap;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.4s both}
-    .btn-primary{background:var(--gradient) !important;color:white;padding:1rem 2.5rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;box-shadow:0 10px 40px rgba(25, 118, 210, 0.3) !important;position:relative;overflow:hidden}
-    .btn-secondary{background:transparent;color:var(--primary) !important;padding:1rem 2.5rem;border:2px solid var(--primary);border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;position:relative;overflow:hidden}
-    .stats-container{background:white;border-radius:30px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.1);position:relative;overflow:hidden}
-    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
     .stat-number{font-size:2.5rem;font-weight:800;color:var(--primary) !important;display:block}
     .section-title{color:var(--primary) !important;}
-    .program-dot{background:var(--gradient) !important;box-shadow:0 15px 40px rgba(25, 118, 210, 0.4) !important;}
+    .program-dot{background:var(--gradient) !important;color:white !important;box-shadow:0 15px 40px rgba(25, 118, 210, 0.4) !important;}
     .specialty-icon{background:var(--gradient) !important;box-shadow:0 10px 30px rgba(25, 118, 210, 0.3) !important;}
     .author-avatar{background:var(--gradient) !important;box-shadow:0 10px 30px rgba(25, 118, 210, 0.3) !important;}
     .cta-section{background:var(--gradient) !important;}
-    @media (max-width:768px){.hero-content{grid-template-columns:1fr;gap:3rem}.hero-text h1{font-size:2.5rem}.hero-buttons{flex-direction:column;width:100%}.btn-primary,.btn-secondary{width:100%;text-align:center}.stats-grid{grid-template-columns:1fr}}
     </style>
-    <!-- CSS complémentaire pour le reste -->
-    <link rel="stylesheet" href="../assets/css/caferuis-page.css?v=1757309249">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,7 +93,7 @@
     }
     </script>
 </head>
-<body>
+<body class="page-caferuis">
     <!-- Skip Link pour accessibilité -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     
@@ -150,7 +119,7 @@
                     <h1>Coaching Mémoire CAFERUIS</h1>
                     <p>Accompagnement spécialisé pour votre mémoire de fonction de directeur d'établissement ou de service d'intervention sociale. Formation complète avec préparation de l'expertise technique et établissement du plan stratégique.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn-primary" onclick="openModal()">Consultation gratuite</a>
+                        <button class="btn-primary" onclick="openModal()">Consultation gratuite</button>
                         <a href="#programme" class="btn-secondary">Découvrir la méthode</a>
                     </div>
                 </div>
@@ -190,7 +159,7 @@
                 <div class="program-item">
                     <div class="program-dot">1</div>
                     <div class="program-content">
-                        <h3>Préparation de l'Expertise Technique</h3>
+                        <h3>Préparation de l'expertise technique</h3>
                         <p>Développement approfondi de votre expertise technique en direction d'établissement social et médico-social. Maîtrise des enjeux sectoriels et des compétences managériales spécifiques.</p>
                         <ul class="program-features">
                             <li>Analyse des politiques publiques sectorielles</li>
@@ -207,7 +176,7 @@
                 <div class="program-item">
                     <div class="program-dot">2</div>
                     <div class="program-content">
-                        <h3>Établissement du Plan de Développement</h3>
+                        <h3>Établissement du plan de développement</h3>
                         <p>Conception stratégique du projet d'établissement ou de service. Elaboration d'un plan de développement opérationnel adapté aux besoins du territoire et aux évolutions sectorielles.</p>
                         <ul class="program-features">
                             <li>Diagnostic territorial et analyse des besoins</li>
@@ -224,7 +193,7 @@
                 <div class="program-item">
                     <div class="program-dot">3</div>
                     <div class="program-content">
-                        <h3>Recherche Appliquée et Innovation</h3>
+                        <h3>Recherche appliquée et innovation</h3>
                         <p>Conduite d'une recherche appliquée sur une problématique managériale ou organisationnelle. Innovation dans les pratiques professionnelles et amélioration continue des services.</p>
                         <ul class="program-features">
                             <li>Problématique managériale et hypothèses</li>
@@ -241,7 +210,7 @@
                 <div class="program-item">
                     <div class="program-dot">4</div>
                     <div class="program-content">
-                        <h3>Présentation et Soutenance</h3>
+                        <h3>Présentation et soutenance</h3>
                         <p>Préparation intensive à la soutenance devant le jury. Techniques de présentation, communication managériale et défense du projet professionnel.</p>
                         <ul class="program-features">
                             <li>Structuration de la présentation (45 min)</li>
@@ -260,7 +229,7 @@
         <!-- Specialties Section -->
         <section class="specialties-section">
             <div class="section-header">
-                <h2 class="section-title">Domaines d'Expertise</h2>
+                <h2 class="section-title">Domaines d'expertise</h2>
                 <p class="section-subtitle">Spécialisations sectorielles adaptées aux enjeux contemporains</p>
             </div>
             
@@ -288,7 +257,7 @@
         <!-- Testimonials Section -->
         <section class="testimonials-section">
             <div class="section-header">
-                <h2 class="section-title">Témoignages de Directeurs</h2>
+                <h2 class="section-title">Témoignages de directeurs</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -344,75 +313,14 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-content">
-                <h2>Prêt à Diriger avec Excellence ?</h2>
+                <h2>Prêt à diriger avec excellence ?</h2>
                 <p>Bénéficiez d'un accompagnement personnalisé par des experts en direction d'établissements sociaux et médico-sociaux. Consultation gratuite pour définir votre parcours de certification.</p>
-                <a href="#" class="cta-button" onclick="openModal()">Je lance mon CAFERUIS</a>
+                <button class="cta-button" onclick="openModal()">Je lance mon CAFERUIS</button>
             </div>
         </section>
     </main>
 
-    <!-- Modal -->
-    <div class="modal" id="consultationModal">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <div class="modal-header">
-                <h3 class="modal-title">Réservez Votre Entretien Gratuit</h3>
-                <p class="modal-subtitle">30 minutes avec un enseignant-chercheur expert</p>
-            </div>
-            <form netlify netlify-honeypot="bot-field" action="/merci.html" method="POST" name="entretien-gratuit">
-                <!-- Champ honeypot pour éviter le spam -->
-                <input type="hidden" name="bot-field" />
-                <!-- Champ pour l'email de notification -->
-                <input type="hidden" name="form-name" value="entretien-gratuit" />
-                <div class="form-group">
-                    <label for="name">Nom complet *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Téléphone *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="discipline">Discipline *</label>
-                    <select id="discipline" name="discipline" required>
-                        <option value="">Sélectionnez...</option>
-                        <option value="caferuis">CAFERUIS - Direction Établissement Social</option>
-                        <option value="social">Travail social</option>
-                        <option value="economie">Économie & Gestion</option>
-                        <option value="droit">Droit</option>
-                        <option value="autre">Autre</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="level">Niveau d'études *</label>
-                    <select id="level" name="level" required>
-                        <option value="">Sélectionnez...</option>
-                        <option value="caferuis">CAFERUIS</option>
-                        <option value="master">Master</option>
-                        <option value="pro">Formation professionnelle</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="urgency">Urgence du projet</label>
-                    <select id="urgency" name="urgency">
-                        <option value="">Sélectionnez...</option>
-                        <option value="urgent">Urgent (< 3 mois)</option>
-                        <option value="moyen">Moyen (3-6 mois)</option>
-                        <option value="long">Long terme (> 6 mois)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Décrivez votre projet</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Sujet de recherche, difficultés rencontrées, objectifs..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">Réserver mon entretien gratuit</button>
-            </form>
-        </div>
-    </div>
+    <!-- Modal sera chargée dynamiquement -->
 
     <!-- Footer -->
     <footer>
@@ -531,51 +439,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="../assets/js/modal-loader.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Gestion des événements de la modale
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('consultationModal');
-            const modalClose = document.querySelector('.modal-close');
-            
-            // Fermer la modale avec le bouton X
-            if (modalClose) {
-                modalClose.addEventListener('click', closeModal);
-            }
-            
-            // Fermer la modale en cliquant en dehors
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeModal();
-                    }
-                });
-            }
-            
-            // Fermer la modale avec Escape
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
-            });
-        });
-
-        // Fonctions pour ouvrir et fermer la modale
-        function openModal() {
-            const modal = document.getElementById('consultationModal');
-            if (modal) {
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('consultationModal');
-            if (modal) {
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-        }
-    </script>
 </body>
 </html>

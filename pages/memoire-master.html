@@ -31,53 +31,24 @@
     <script src="../assets/js/trusted-types-policy.js"></script>
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="../assets/css/master-page.css?v=1757309251" as="style">
+    <link rel="preload" href="../assets/css/styles.css?v=1757309245" as="style">
     <link rel="preload" href="../assets/js/script.js" as="script">
 
-    <!-- CSS FORCE - Couleurs EXACTES d'index.html -->
     <style>
-    /* Couleurs BLEUES alignées sur index.html */
     :root{
-        --primary:#1976D2 !important;
-        --primary-dark:#0D47A1 !important;
-        --primary-light:#42A5F5 !important;
-        --secondary:#00BCD4 !important;
-        --accent:#1565C0 !important;
-        --success:#4CAF50 !important;
-        --dark:#0F172A !important;
-        --light:#F8FAFC !important;
-        --white:#FFFFFF !important;
-        --gradient:linear-gradient(135deg, #0D47A1 0%, #1976D2 50%, #42A5F5 100%) !important;
-        --gradient-alt:linear-gradient(135deg, #0D47A1 0%, #1976D2 100%) !important;
-        --gradient-success:linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%) !important;
+        --primary:#6366f1 !important;
+        --gradient:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#ec4899 100%) !important;
     }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:var(--dark);overflow-x:hidden;background:var(--white)}
-    nav{position:fixed;top:0;width:100%;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(16px) saturate(120%);z-index:1000;box-shadow:0 2px 8px rgba(25, 118, 210, 0.12);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);border-bottom: 1px solid rgba(25, 118, 210, 0.08);}
-    nav.scrolled{box-shadow:0 4px 16px rgba(25, 118, 210, 0.15);background: rgba(248, 250, 252, 0.98);}
-    .nav-container{max-width:1280px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.75rem;font-weight:800;color:var(--primary) !important;animation:glow 3s ease-in-out infinite;}
-    @keyframes glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.2)}}
-    .hero{margin-top:80px;min-height:calc(100vh - 80px);background:linear-gradient(180deg,var(--light) 0%,rgba(25, 118, 210, 0.05) 100%);position:relative;display:flex;align-items:center;overflow:hidden}
-    .hero-content{max-width:1280px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
-    .hero-text h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;color:var(--primary) !important;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1)}
-    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    .hero-text p{font-size:1.25rem;color:#64748b;margin-bottom:2.5rem;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s both}
-    .hero-buttons{display:flex;gap:1.5rem;flex-wrap:wrap;animation:slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.4s both}
-    .btn-primary{background:var(--gradient) !important;color:white;padding:1rem 2.5rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;box-shadow:0 10px 40px rgba(25, 118, 210, 0.3) !important;position:relative;overflow:hidden}
-    .btn-secondary{background:transparent;color:var(--primary) !important;padding:1rem 2.5rem;border:2px solid var(--primary);border-radius:100px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;display:inline-block;position:relative;overflow:hidden}
-    .stats-container{background:white;border-radius:30px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.1);position:relative;overflow:hidden}
-    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
     .stat-number{font-size:2.5rem;font-weight:800;color:var(--primary) !important;display:block}
     .section-title{color:var(--primary) !important;}
-    .program-dot{background:var(--gradient) !important;box-shadow:0 15px 40px rgba(25, 118, 210, 0.4) !important;}
+    .program-dot{background:var(--gradient) !important;color:white !important;box-shadow:0 15px 40px rgba(25, 118, 210, 0.4) !important;}
     .specialty-icon{background:var(--gradient) !important;box-shadow:0 10px 30px rgba(25, 118, 210, 0.3) !important;}
     .author-avatar{background:var(--gradient) !important;box-shadow:0 10px 30px rgba(25, 118, 210, 0.3) !important;}
     .cta-section{background:var(--gradient) !important;}
     @media (max-width:768px){.hero-content{grid-template-columns:1fr;gap:3rem}.hero-text h1{font-size:2.5rem}.hero-buttons{flex-direction:column;width:100%}.btn-primary,.btn-secondary{width:100%;text-align:center}.stats-grid{grid-template-columns:1fr}}
     </style>
     <!-- CSS complémentaire pour le reste -->
-    <link rel="stylesheet" href="../assets/css/master-page.css?v=1757309251">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=1757309245">
     
     <!-- Fonts - Utilisation des polices système comme CAFERUIS -->
     <!-- Suppression d'Inter pour cohérence avec caferuis-page.css -->
@@ -120,7 +91,7 @@
     }
     </script>
 </head>
-<body>
+<body class="page-master">
     <!-- Skip Link pour accessibilité -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     
@@ -178,7 +149,7 @@
         <!-- Programme Section -->
         <section class="program-section" id="programme">
             <div class="section-header">
-                <h2 class="section-title">Programme d'Accompagnement Mémoire</h2>
+                <h2 class="section-title">Programme d'accompagnement mémoire</h2>
                 <p class="section-subtitle">Méthodologie structurée en 5 étapes pour réussir votre mémoire de Master 2</p>
             </div>
             
@@ -186,7 +157,7 @@
                 <div class="program-item">
                     <div class="program-dot">1</div>
                     <div class="program-content">
-                        <h3>Initiation aux Techniques de la Recherche</h3>
+                        <h3>Initiation aux techniques de la recherche</h3>
                         <p>Formation complète aux fondamentaux de la recherche en sciences de gestion. Maîtrise des paradigmes épistémologiques et des approches méthodologiques spécifiques au marketing et aux RH.</p>
                         <ul class="program-features">
                             <li>Paradigmes positiviste et interprétativiste en gestion</li>
@@ -202,7 +173,7 @@
                 <div class="program-item">
                     <div class="program-dot">2</div>
                     <div class="program-content">
-                        <h3>Conception du Plan de Recherche</h3>
+                        <h3>Conception du plan de recherche</h3>
                         <p>Structuration rigoureuse du mémoire selon les standards académiques et professionnels. Architecture logique adaptée aux spécificités du marketing et des ressources humaines.</p>
                         <ul class="program-features">
                             <li>Plan détaillé et cohérence argumentative</li>
@@ -218,7 +189,7 @@
                 <div class="program-item">
                     <div class="program-dot">3</div>
                     <div class="program-content">
-                        <h3>Collecte et Analyse des Données</h3>
+                        <h3>Collecte et analyse des données</h3>
                         <p>Mise en œuvre des méthodes de collecte adaptées au contexte organisationnel. Maîtrise des outils d'analyse quantitative et qualitative en sciences de gestion.</p>
                         <ul class="program-features">
                             <li>Enquêtes quantitatives et questionnaires validés</li>
@@ -234,7 +205,7 @@
                 <div class="program-item">
                     <div class="program-dot">4</div>
                     <div class="program-content">
-                        <h3>Élaboration des Benchmarks</h3>
+                        <h3>Élaboration des benchmarks</h3>
                         <p>Analyse comparative approfondie des meilleures pratiques sectorielles. Positionnement concurrentiel et identification des facteurs clés de succès.</p>
                         <ul class="program-features">
                             <li>Benchmark concurrentiel et sectoriel</li>
@@ -250,7 +221,7 @@
                 <div class="program-item">
                     <div class="program-dot">5</div>
                     <div class="program-content">
-                        <h3>Relecture Experte et Finalisation</h3>
+                        <h3>Relecture experte et finalisation</h3>
                         <p>Révision critique par des experts du domaine. Optimisation de la qualité rédactionnelle et validation de la cohérence scientifique et managériale.</p>
                         <ul class="program-features">
                             <li>Relecture critique par experts sectoriels</li>
@@ -265,40 +236,30 @@
             </div>
         </section>
 
-        <!-- Specializations Section -->
-        <section class="specializations-section">
+        <!-- Specialties Section -->
+        <section class="specialties-section">
             <div class="section-header">
-                <h2 class="section-title">Nos Spécialisations</h2>
+                <h2 class="section-title">Nos spécialisations</h2>
                 <p class="section-subtitle">Expertise adaptée aux domaines du Marketing et des Ressources Humaines</p>
             </div>
-            
-            <div class="specializations-grid">
-                <div class="specialization-card">
-                    <div class="specialization-icon">📈</div>
+
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">📈</div>
                     <h3>Marketing & Communication</h3>
                     <p>Accompagnement spécialisé pour les mémoires en marketing digital, stratégies de marque, comportement consommateur et communication.</p>
-                    <ul class="specialization-features">
-                        <li>Marketing digital et e-commerce</li>
-                        <li>Brand management et stratégie de marque</li>
-                        <li>Comportement du consommateur</li>
-                        <li>Marketing BtoB et BtoC</li>
-                        <li>Communication et médias sociaux</li>
-                        <li>Études de marché et segmentation</li>
-                    </ul>
                 </div>
-                
-                <div class="specialization-card">
-                    <div class="specialization-icon">👥</div>
-                    <h3>Ressources Humaines</h3>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">👥</div>
+                    <h3>Ressources humaines</h3>
                     <p>Expertise en gestion des talents, management organisationnel, développement RH et transformation digitale des ressources humaines.</p>
-                    <ul class="specialization-features">
-                        <li>Gestion des talents et recrutement</li>
-                        <li>Management et leadership</li>
-                        <li>Formation et développement des compétences</li>
-                        <li>Transformation digitale RH</li>
-                        <li>Bien-être au travail et QVT</li>
-                        <li>Relations sociales et négociation</li>
-                    </ul>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">🔍</div>
+                    <h3>Recherche quantitative</h3>
+                    <p>Maîtrise des méthodes quantitatives et qualitatives adaptées aux enjeux marketing et RH. Outils statistiques et analyse de données.</p>
                 </div>
             </div>
         </section>
@@ -306,7 +267,7 @@
         <!-- Testimonials Section -->
         <section class="testimonials-section">
             <div class="section-header">
-                <h2 class="section-title">Témoignages d'Étudiants</h2>
+                <h2 class="section-title">Témoignages d'étudiants</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -362,76 +323,14 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-content">
-                <h2>Prêt à Exceller dans votre Mémoire ?</h2>
+                <h2>Prêt à exceller dans votre mémoire ?</h2>
                 <p>Bénéficiez d'un accompagnement personnalisé par des experts en marketing et ressources humaines. Consultation gratuite pour définir votre stratégie de réussite.</p>
                 <a href="#" class="cta-button" onclick="openModal()">Je démarre mon mémoire</a>
             </div>
         </section>
     </main>
 
-    <!-- Modal -->
-    <div class="modal" id="consultationModal">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <div class="modal-header">
-                <h3 class="modal-title">Réservez Votre Entretien Gratuit</h3>
-                <p class="modal-subtitle">30 minutes avec un enseignant-chercheur expert</p>
-            </div>
-            <form netlify netlify-honeypot="bot-field" action="/merci.html" method="POST" name="entretien-gratuit">
-                <!-- Champ honeypot pour éviter le spam -->
-                <input type="hidden" name="bot-field" />
-                <!-- Champ pour l'email de notification -->
-                <input type="hidden" name="form-name" value="entretien-gratuit" />
-                <div class="form-group">
-                    <label for="name">Nom complet *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Téléphone *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="discipline">Discipline *</label>
-                    <select id="discipline" name="discipline" required>
-                        <option value="">Sélectionnez...</option>
-                        <option value="master-marketing">Master 2 Marketing</option>
-                        <option value="master-rh">Master 2 Ressources Humaines</option>
-                        <option value="master-management">Master 2 Management</option>
-                        <option value="master-finance">Master 2 Finance</option>
-                        <option value="autre">Autre Master</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="level">Niveau d'études *</label>
-                    <select id="level" name="level" required>
-                        <option value="">Sélectionnez...</option>
-                        <option value="master2">Master 2</option>
-                        <option value="master1">Master 1</option>
-                        <option value="mba">MBA</option>
-                        <option value="pro">Formation professionnelle</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="urgency">Urgence du projet</label>
-                    <select id="urgency" name="urgency">
-                        <option value="">Sélectionnez...</option>
-                        <option value="urgent">Urgent (< 3 mois)</option>
-                        <option value="moyen">Moyen (3-6 mois)</option>
-                        <option value="long">Long terme (> 6 mois)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Décrivez votre projet</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Sujet de mémoire, problématique, difficultés rencontrées, objectifs..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">Réserver mon entretien gratuit</button>
-            </form>
-        </div>
-    </div>
+    <!-- Modal sera chargée dynamiquement -->
 
     <!-- Footer -->
     <footer>
@@ -550,51 +449,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="../assets/js/modal-loader.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        // Gestion des événements de la modale
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('consultationModal');
-            const modalClose = document.querySelector('.modal-close');
-            
-            // Fermer la modale avec le bouton X
-            if (modalClose) {
-                modalClose.addEventListener('click', closeModal);
-            }
-            
-            // Fermer la modale en cliquant en dehors
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeModal();
-                    }
-                });
-            }
-            
-            // Fermer la modale avec Escape
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
-            });
-        });
-
-        // Fonctions pour ouvrir et fermer la modale
-        function openModal() {
-            const modal = document.getElementById('consultationModal');
-            if (modal) {
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('consultationModal');
-            if (modal) {
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-        }
-    </script>
 </body>
 </html>
