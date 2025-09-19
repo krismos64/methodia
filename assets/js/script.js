@@ -434,12 +434,20 @@ function initNavbarScroll() {
 }
 
 // Animation des statistiques
-function animateValue(element, start, end, duration) {
+function animateValue(element, start, end, duration, suffix = '+') {
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        element.textContent = Math.floor(progress * (end - start) + start) + '+';
+        const currentValue = Math.floor(progress * (end - start) + start);
+
+        // Gérer les différents suffixes
+        if (suffix === '-%') {
+            element.textContent = '-' + currentValue + '%';
+        } else {
+            element.textContent = currentValue + suffix;
+        }
+
         if (progress < 1) {
             window.requestAnimationFrame(step);
         }
@@ -453,9 +461,23 @@ function initStatsAnimation() {
             if (entry.isIntersecting) {
                 const statNumbers = entry.target.querySelectorAll('.stat-number');
                 statNumbers.forEach(stat => {
-                    const value = parseInt(stat.textContent);
+                    const originalText = stat.textContent;
+                    const value = parseInt(originalText);
+
                     if (!isNaN(value)) {
-                        animateValue(stat, 0, value, 2000);
+                        // Déterminer le suffixe approprié
+                        let suffix = '+';
+                        const label = stat.nextElementSibling?.textContent?.toLowerCase() || '';
+
+                        if (originalText.includes('%') || label.includes('réussite')) {
+                            suffix = '%';
+                        } else if (label.includes('temps')) {
+                            suffix = '-%';
+                        } else if (label.includes('humaine')) {
+                            suffix = '%';
+                        }
+
+                        animateValue(stat, 0, value, 2000, suffix);
                     }
                 });
                 statsObserver.unobserve(entry.target);
